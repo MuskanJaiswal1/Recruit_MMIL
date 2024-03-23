@@ -1,28 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react';
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.jpg";
-import './design.css'
+import './design.css';
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
-
 const Design = () => {
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [githubLink, setGithubLink] = useState('');
+  const [gDriveLink, setGDriveLink] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/name', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'Android',
+          phoneNumber,
+          githubLink,
+          gDriveLink
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      // Handle successful form submission
+      console.log('Form submitted successfully');
+    } catch (error) {
+      // Handle error
+      console.error('Failed to submit form', error);
+    }
+  };
+
   return (
     <>
       <div className='main'>
         <img
           src={window.innerWidth <= 900 ? appbg : bg}
           style={{
-            height:window.innerWidth < 900 ? "149vh" : "170vh",
+            height: window.innerWidth < 900 ? "149vh" : "170vh",
           }}
           alt="Your Image"
         />
       </div>
       <div id='first'>
-      <a href="/Register">
-        <img
-          src={mmil}
-          alt="Overlay Image"
-        />
+        <a href="/Register">
+          <img
+            src={mmil}
+            alt="Overlay Image"
+          />
         </a>
       </div>
       <div className='domains'>
@@ -51,55 +82,49 @@ const Design = () => {
               <li>Apk should be uploaded on Google drive and attached below.</li>
             </ul>
             <h5>Details to be filled by Students.</h5>
-            <form action="">
-              <label htmlFor="textInput">Phone Number*</label>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="phoneNumber">Phone Number*</label>
               <div className='inputBox'>
                 <input
-                  id="textInput"
+                  id="phoneNumber"
                   className="form"
-                  formMethod="POST"
                   type="text"
-                  placeholder="Text here"
-                  aria-label="type here"
+                  placeholder="Enter your phone number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   required
                 />
               </div>
-              <label htmlFor="textInput">Github link*</label>
+              <label htmlFor="githubLink">Github link*</label>
               <div className='inputBox'>
                 <input
-                  id="textInput"
+                  id="githubLink"
                   className="form"
-                  formMethod="POST"
                   type="text"
-                  placeholder="Paste here"
-                  aria-label="type here"
+                  placeholder="Paste your Github link"
+                  value={githubLink}
+                  onChange={(e) => setGithubLink(e.target.value)}
                   required
                 />
               </div>
-              <label htmlFor="textInput">G-drive Link*</label>
+              <label htmlFor="gDriveLink">G-drive Link</label>
               <div className='inputBox'>
                 <input
-                  id="textInput"
+                  id="gDriveLink"
                   className="form"
-                  formMethod="POST"
                   type="text"
-                  placeholder="Paste here"
-                  aria-label="type here"
+                  placeholder="Paste your Google Drive link"
+                  value={gDriveLink}
+                  onChange={(e) => setGDriveLink(e.target.value)}
                 />
               </div>
-              <button className="submit">Submit</button>
+              <button type="submit" className="submit">Submit</button>
             </form>
           </div>
         </div>
       </div>
-
-
-
-
-
     </>
+  );
+};
 
-  )
-}
-
-export default Design
+export default Design;

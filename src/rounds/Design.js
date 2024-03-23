@@ -1,10 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.jpg";
 import './design.css';
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
 const Design = () => {
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [figmaLink, setFigmaLink] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/name', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'Design',
+          phoneNumber: phoneNumber,
+          figmaLink: figmaLink
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      // Handle successful form submission (e.g., show a success message)
+      console.log('Form submitted successfully');
+    } catch (error) {
+      // Handle error (e.g., show an error message)
+      console.error('Failed to submit form', error);
+    }
+  };
+
   return (
     <>
       <div className='main'>
@@ -49,7 +79,7 @@ const Design = () => {
               <li>Task should be submitted below.</li>
             </ul>
             <h5>Details to be filled by Students.</h5>
-            <form>
+            <form onSubmit={handleSubmit}>
               <label htmlFor="phoneNumber">Phone Number*</label>
               <div className='inputBox'>
                 <input
@@ -57,8 +87,9 @@ const Design = () => {
                   className="form"
                   type="text"
                   name="phoneNumber"
-                  placeholder="Text here"
-                  aria-label="type here"
+                  placeholder="Enter your phone number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   required
                 />
               </div>
@@ -70,7 +101,8 @@ const Design = () => {
                   type="text"
                   name="figmaLink"
                   placeholder="Paste here"
-                  aria-label="type here"
+                  value={figmaLink}
+                  onChange={(e) => setFigmaLink(e.target.value)}
                   required
                 />
               </div>
@@ -84,3 +116,4 @@ const Design = () => {
 };
 
 export default Design;
+

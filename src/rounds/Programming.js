@@ -1,34 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react';
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.jpg";
-import './design.css'
+import './design.css';
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
-
 const Design = () => {
+  const [phoneNo, setPhoneNo] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/name', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'Programming',
+          phoneNo: phoneNo,
+
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      // Handle successful form submission (e.g., show a success message)
+      console.log('Form submitted successfully');
+    } catch (error) {
+      // Handle error (e.g., show an error message)
+      console.error('Failed to submit form', error);
+    }
+  };
+
   return (
     <>
       <div className='main'>
         <img
           src={window.innerWidth <= 900 ? appbg : bg}
           style={{
-            height:window.innerWidth < 900 ? "149vh" : "170vh",
+            height: window.innerWidth < 900 ? "149vh" : "170vh",
           }}
           alt="Your Image"
         />
       </div>
       <div id='first'>
-      <a href="/Register">
-        <img
-          src={mmil}
-          alt="Overlay Image"
-        />
+        <a href="/Register">
+          <img
+            src={mmil}
+            alt="Overlay Image"
+          />
         </a>
       </div>
       <div className='domains'>
         <div className='fields'>
           <ul>
-            <li className='design' ><a href="/Design">Design</a></li>
+            <li className='design'><a href="/Design">Design</a></li>
             <li className='programming'><a href="/Programming">Programming</a></li>
             <li><a href="/Webdev">Web-Dev</a></li>
             <li><a href="/Android">Android</a></li>
@@ -36,11 +64,11 @@ const Design = () => {
         </div>
       </div>
       <div className='container'>
-        <div className='rounds' >
+        <div className='rounds'>
           <p>Tasks</p>
           <div className='webdev'>
             <p>Round 2</p>
-            <h1 className='heading '> Technical Round</h1>
+            <h1 className='heading'> Technical Round</h1>
             <h6 className='task'>Task round to check your skills</h6>
             <h5>Instructions for Students</h5>
             <ul>
@@ -50,33 +78,26 @@ const Design = () => {
               <li>Please sign up on Hackerank.com  <br />before attempting the quiz.</li>
             </ul>
             <h5>Details to be filled by Students.</h5>
-            <form action="">
-              <label htmlFor="textInput">Phone Number*</label>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="phoneNo">Phone Number*</label>
               <div className='inputBox'>
                 <input
-                  id="textInput"
+                  id="phoneNo"
                   className="form"
-                  formMethod="POST"
                   type="text"
-                  placeholder="Text here"
-                  aria-label="type here"
+                  placeholder="Enter your phone number"
+                  value={phoneNo}
+                  onChange={(e) => setPhoneNo(e.target.value)}
                   required
                 />
               </div>
-              <p
-              style={{
-                marginTop: '4rem',
-                marginBottom: '4rem'
-              }} 
-              ><a href="">Click here</a> to go the contest page.</p>
+              <button type="submit" className="submit">Submit</button>
             </form>
           </div>
         </div>
       </div>
-
     </>
+  );
+};
 
-  )
-}
-
-export default Design
+export default Design;
