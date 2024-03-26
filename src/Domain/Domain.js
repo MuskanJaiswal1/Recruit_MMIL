@@ -118,13 +118,17 @@ const Name = () => {
 
   useEffect(() => {
     if (tickmark && userData.domain) {
+      const dataToSend = {
+        ...userData,
+        formType: 'MMIL' // Include the formType field
+      };
       // All necessary data is available and tickmark is pressed, so save the data
       fetch('http://localhost:5000/name', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userData),
+        body: JSON.stringify(dataToSend),
       })
         .then((response) => response.json())
         .then((data) => {
