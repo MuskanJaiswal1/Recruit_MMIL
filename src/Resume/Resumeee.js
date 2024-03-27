@@ -122,7 +122,7 @@ const App = () => {
         </p>
 
         <div className="dropzone" onDragOver={handleDragOver} onDrop={(event) => {handleDrop(event); handleUpload(); handleShowTickmark();}}>
-        <i class="fa-regular fa-file-lines" style={{ fontSize: '44px', margin: '15px', }}></i>
+        <p class="fa-regular fa-file-lines" style={{ fontSize: '44px', margin: '15px', }}></p>
         <h4 style={{ color: 'white', fontSize: '18px', color: '#02CA46' }}>{uploadStatus}</h4>
         {files ? (
           <p></p>
@@ -143,7 +143,7 @@ const App = () => {
       </div>
 
         <Link to="/Congrats">
-          <i class="fa-solid fa-circle-check"
+          <p class="fa-solid fa-circle-check"
             style={{
               color: isHoverTickmark ? "#FFE454" : "#ffffff",
               fontSize: "4.2rem",
@@ -156,7 +156,7 @@ const App = () => {
             onMouseLeave={handleUnHoverTickmark}
             onTouchStart={handleHoverTickmark}
             onTouchEnd={handleUnHoverTickmark}
-          ></i>
+          ></p>
         </Link>
         <img
           src={mmil}

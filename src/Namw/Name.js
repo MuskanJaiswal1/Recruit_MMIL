@@ -135,7 +135,7 @@ const Name = () => {
           />
         </div>
         <Link to="/RollNo">
-          <i class="fa-solid fa-circle-check"
+          <p class="fa-solid fa-circle-check"
             style={{
               color: isHoverTickmark ? "#FFE454" : "#ffffff",
               fontSize: "4.2rem",
@@ -148,7 +148,7 @@ const Name = () => {
             onMouseLeave={handleUnHoverTickmark}
             onTouchStart={handleHoverTickmark}
             onTouchEnd={handleUnHoverTickmark}
-          ></i>
+          ></p>
         </Link>
 
         <img

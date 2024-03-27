@@ -11,6 +11,13 @@
     background-position: center;
 }
 
+.backBtn{
+    color: #fff;
+    position: absolute;
+    top: -20vh;
+    left: -28vw;
+}
+
 #first img {
     top: 5%;
     position: absolute;
@@ -288,7 +295,7 @@ form:valid .submit {
         height: 705px;
     }
     .technical-container{
-        margin-left: -20%;
+        margin-left: -16%;
         width: 305px;
         height: 415px;
     }
@@ -318,6 +325,12 @@ form:valid .submit {
 
     .webdev {
         width: 74vw;
+    }
+    .backBtn{
+        color: #fff;
+        position: absolute;
+        top: -150px;
+        left: -15px;
     }
 
 }

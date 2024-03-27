@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.jpg";
 import './design.css';
+import { Link } from "react-router-dom";
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
 const Design = () => {
@@ -64,6 +65,9 @@ const Design = () => {
             <li><a href="/Webdev">Web-Dev</a></li>
             <li className='and'><a href="/Android">Android</a></li>
           </ul>
+          <Link to="/Register">
+          <p class="fa-solid fa-arrow-left backBtn"></p>
+          </Link>
         </div>
       </div>
       <div className='container'>

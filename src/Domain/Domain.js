@@ -291,14 +291,14 @@ const Name = () => {
             display: tickmark? 'inline-block' : 'none',
           }}
         >
-             <i class="fa-solid fa-circle-check"
+             <p class="fa-solid fa-circle-check"
           style={{
             color: isHoverTickmark?"#FFE454":"#ffffff",
             fontSize: "4.2rem"
           }}
           onMouseEnter={handleHoverTickmark}
           onMouseLeave={handleUnHoverTickmark}
-          ></i>
+          ></p>
         </Link>
           ) : (
             <Link
@@ -310,7 +310,7 @@ const Name = () => {
             opacity: tickmark ? '1' : '0',
           }}
         >
-             <i class="fa-solid fa-circle-check"
+             <p class="fa-solid fa-circle-check"
           style={{
             color: isHoverTickmark?"#FFE454":"#ffffff",
             fontSize: "4.2rem"
@@ -319,7 +319,7 @@ const Name = () => {
           onMouseLeave={handleUnHoverTickmark}
               onTouchStart={handleHoverTickmark} // Trigger hover effect on touch
           onTouchEnd={handleUnHoverTickmark}
-          ></i>
+          ></p>
         </Link>
           )
         )}

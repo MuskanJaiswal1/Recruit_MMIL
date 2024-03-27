@@ -92,10 +92,10 @@ const App = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <i 
+                            <p 
                             className={`fa-solid fa-chevron-${expandedCard === "aptitude" ? "down" : "right"}`}
                             style={{position: 'absolute',right: '34px',}}
-                            ></i>
+                            ></p>
                         </div>
                         <Link to="/Technical" className='card-link'>
                         <div className={`technical sub-card ${expandedCard === "technical" ? "expanded-technical" : ""}`} onClick={() => handleCardClick("technical")} >
@@ -118,10 +118,10 @@ const App = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <i 
+                            <p 
                             className={`fa-solid fa-chevron-${expandedCard === "technical" ? "down" : "right"}`}
                             style={{position: 'absolute',right: '34px',}}
-                            ></i>
+                            ></p>
                         </div>
                         </Link>
                         <div className={`interview sub-card ${expandedCard === "interview" ? "expanded-interview" : ""}`} onClick={() => handleCardClick("interview")}>
@@ -142,9 +142,9 @@ const App = () => {
                                       </ul>
                                 </div>
                             </div>
-                            <i className={`fa-solid fa-chevron-${expandedCard === "interview" ? "down" : "right"}`} 
+                            <p className={`fa-solid fa-chevron-${expandedCard === "interview" ? "down" : "right"}`} 
                             style={{position: 'absolute',right: '34px', }}
-                            ></i>
+                            ></p>
                         </div>
                     </div>
                     <img

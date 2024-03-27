@@ -136,7 +136,7 @@ const Name = () => {
         </div>
 
         <Link to="/Branch">
-             <i class="fa-solid fa-circle-check"
+             <p class="fa-solid fa-circle-check"
           style={{
             color: isHoverTickmark?"#FFE454":"#ffffff",
             fontSize: "4.2rem",
@@ -149,7 +149,7 @@ const Name = () => {
           onMouseLeave={handleUnHoverTickmark}
               onTouchStart={handleHoverTickmark} // Trigger hover effect on touch
           onTouchEnd={handleUnHoverTickmark}
-          ></i>
+          ></p>
         </Link>
 
         <img
