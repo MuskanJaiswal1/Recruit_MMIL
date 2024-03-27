@@ -78,5 +78,13 @@ routes.post('/name', async (req, res) => {
         res.status(500).json({ error: "Failed to submit form" });
     }
 });
+routes.get('/user_list',async (req,res)=>{
+    try {
+        const user_list = await MMIL.find()
+        res.status(200).json(user_list)
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 module.exports = routes;
