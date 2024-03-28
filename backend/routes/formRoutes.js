@@ -8,6 +8,7 @@ const Programming = require('../models/Programming');
 const Design = require('../models/Design');
 const Android = require('../models/Android');
 
+
 require('../db/connect');
 
 routes.get('/', (req, res) => {
@@ -86,5 +87,21 @@ routes.get('/user_list',async (req,res)=>{
         console.log(error)
     }
 })
+routes.get('/user', async (req, res) => {
+    try {
+        // Retrieve user data from the database
+        const userData = await MMIL.findOne().sort({ _id: -1 }).limit(1); // Assuming you want to retrieve one user
+        
+        if (!userData) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        
+        // Send the user data as a JSON response
+        res.json(userData);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Failed to fetch user data" });
+    }
+});
 
 module.exports = routes;
