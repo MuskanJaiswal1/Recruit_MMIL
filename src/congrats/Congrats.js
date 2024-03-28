@@ -28,7 +28,7 @@ const Name = () => {
   }, []);
 
   setTimeout(() => {
-    window.location.href = "/Register"; 
+    window.location.href = "/Home"; 
   }, 2000); 
 
   return (
