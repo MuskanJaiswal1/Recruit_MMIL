@@ -15,7 +15,7 @@ const Design = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch('http://localhost:5000/name', {
+        const response = await fetch('https://recruit-mmil-3.onrender.com/name', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
