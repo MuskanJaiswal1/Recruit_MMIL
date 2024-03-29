@@ -8,7 +8,7 @@ import appbg from "../assets/bg-app.svg";
 
 const Name = () => {
   const { userData, setUserData } = useUser();
-
+  
   const handleChange = (e) => {
     setUserData({ ...userData, phoneNo: e.target.value });
   };
@@ -130,7 +130,7 @@ const Name = () => {
               color: "white",
               outline: 'none',
             }}
-            type="email"
+            type="text"
             value={userData.phoneNo}
             onChange={handleChange}
             onFocus={handleShowTickmark}
@@ -147,7 +147,7 @@ const Name = () => {
             display: tickmark? 'inline-block' : 'none',
           }}
         >
-          <p class="fa-solid fa-circle-check"
+          <p className="fa-solid fa-circle-check"
           style={{
             color: isHoverTickmark?"#FFE454":"#ffffff",
             fontSize: "4.2rem"
