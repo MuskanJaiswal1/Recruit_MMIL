@@ -44,13 +44,13 @@ const App = () => {
   return (
     <>
       <div>
-        <div className="contain">
+        <div className="contain" style={{overflow: "hidden"}}>
           <img
             src={windowSize.width <= 900 ? appbg : bg}
             alt="Your Image"
             id="imagess"
             style={{
-              width: windowSize.Width < 900 ? "100vw" : "99vw",
+              width: windowSize.Width < 900 ? "100vw" : "100vw",
               height: windowSize.Width < 900 ? "125vh" : "120vh",
               objectFit: "cover",
             }}
@@ -133,8 +133,10 @@ const App = () => {
                       ></img>{" "}
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click">
-                        <a href="">Click here</a>
+                      <button className="click" style={{opacity: "0.4"}}>
+                        {/* <a href=""> */}
+                          Click here
+                          {/* </a> */}
                       </button>
                     </li>
                   </ul>
@@ -187,8 +189,10 @@ const App = () => {
                       </li>
                       <li>The link to the task has been provided below.</li>
                       <li style={{ listStyle: "none" }}>
-                        <button className="click">
-                          <a href="/Technical">Click here</a>
+                        <button className="click" style={{opacity: "0.4"}}>
+                          {/* <a href="/Technical"> */}
+                            Click here
+                            {/* </a> */}
                         </button>
                       </li>
                     </ul>

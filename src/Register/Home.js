@@ -94,7 +94,7 @@ const UserDataComponent = () => {
   return (
     <>
       <div>
-        <div className="contain">
+        <div className="contain" style={{overflow: "hidden"}}>
           <img
             src={windowSize.width <= 900 ? appbg : bg}
             alt="Your Image"

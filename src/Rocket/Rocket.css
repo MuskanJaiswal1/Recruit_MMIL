@@ -2,16 +2,16 @@
   position: absolute;
   top: 40vh;
   left: 58.7vw;
-  animation: slideUpper 0.5s ease-in-out 0.5s forwards;
+  animation: slideUpper 0.7s ease-in-out 0.7s forwards;
 }
 #smoke {
   position: absolute;
   top: 52vh;
   left: 59.5vh;
-  animation: slideUp 0.5s ease-in-out 0.5s forwards;
+  animation: slideUp 0.7s ease-in-out 0.7s forwards;
 }
 .moveUp {
-  animation: slideUp 0.5s ease-in-out 0.5s forwards;
+  animation: slideUp 0.7s ease-in-out 0.7s forwards;
 }
 
 @keyframes slideUpper {
@@ -34,6 +34,6 @@
   #smoke{
     position: absolute;
     top: 62vh;
-    left: -30vw;
+    left: -29vw;
   }
 }

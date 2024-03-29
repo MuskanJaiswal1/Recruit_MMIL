@@ -39,22 +39,21 @@ const App = () => {
       smokeElement.classList.add("moveUp");
 
       setTimeout(() => {
-        // Navigate to register route after animation completes
         navigate("/Register");
-      }, 1500); // Adjust this delay as needed to match your animation duration
+      }, 2000); 
     }
   }, [isClicked, navigate]);
   //  } });
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", overflow: "hidden" }}>
       <img
          src={windowSize.width <= 900 ? appbg : bg}
         alt="Your Image"
         style={{
-          width: windowSize.Width < 900 ? "100vw" : "100vw", // Adjust as needed
-          height: windowSize.Width < 900 ? "100vh" : "100vh", // Adjust as needed
-          objectFit: "cover", // Adjust as needed
+          width: windowSize.Width < 900 ? "100vw" : "100vw", 
+          height: windowSize.Width < 900 ? "100vh" : "100vh", 
+          objectFit: "cover", 
         }}
       />
 
@@ -83,7 +82,6 @@ const App = () => {
 
         <h2
           style={{
-            // marginLeft: "26px",
             fontSize: "40px",
             fontFamily: "Montserrat",
             fontWeight:"ExtraBold",
@@ -97,8 +95,7 @@ const App = () => {
         </h2>
         <p
           style={{
-            display: "block",
-            // marginLeft: "18px",         
+            display: "block",       
             fontSize: "18px",        
             letterSpacing:"3px",
             color: "white",
@@ -115,10 +112,8 @@ const App = () => {
             backgroundColor: isHovering ? "#009A0F" : "#FFE454",
             height: "44px",
             width: "124px",
-            // marginLeft: "7%",
             border: "none",
             borderRadius: "10px",
-            // marginTop: "-10px",
           }}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}

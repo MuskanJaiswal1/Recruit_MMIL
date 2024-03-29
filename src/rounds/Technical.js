@@ -34,12 +34,11 @@ const Technical = () => {
             <li><a href="/Android">Android</a></li>
           </ul>
         </div>
-        <Link to="/Register">
+        <Link to="/Registered">
           <p class="fa-solid fa-arrow-left backBtn"></p>
           </Link>
       </div>
       <div className='technical-container'>
-          {/* <p class="fa-solid fa-arrow-left backBtn"></p> */}
         <div className='rounds' >
           <p>Tasks</p>
           <div className='instructions'>

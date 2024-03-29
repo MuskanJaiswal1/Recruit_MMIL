@@ -40,7 +40,7 @@ const Login = () => {
   };
   
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", overflow: "hidden" }} >
       <img
         src={windowSize.width <= 900 ? appbg : bg}
         alt="Your Image"

@@ -60,7 +60,7 @@ const Design = () => {
             <li><a href="/Webdev">Web-Dev</a></li>
             <li><a href="/Android">Android</a></li>
           </ul>
-          <Link to="/Register">
+          <Link to="/Registered">
           <p class="fa-solid fa-arrow-left backBtn"></p>
           </Link>
         </div>
@@ -70,7 +70,7 @@ const Design = () => {
           <p>Tasks</p>
           <div className='webdev'>
             <p>Round 2</p>
-            <h1 className='heading'> Technical Round</h1>
+            <h1 className='heading'>Programming</h1>
             <h6 className='task'>Task round to check your skills</h6>
             <h5>Instructions for Students</h5>
             <ul>
