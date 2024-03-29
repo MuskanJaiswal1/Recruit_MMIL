@@ -65,7 +65,7 @@ const UserDataComponent = () => {
           }
   
           // Fetch user data from server
-          const response = await fetch("http://localhost:5000/userDataa", {
+          const response = await fetch("https://recruit-mmil-3.onrender.com/userDataa", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
