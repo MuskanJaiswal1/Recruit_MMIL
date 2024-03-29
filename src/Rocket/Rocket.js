@@ -123,8 +123,7 @@ const App = () => {
             to="#"
             style={{
               textDecoration: "none",
-              color: "#009A0F",
-              color: isHovering ? "#FFE454" : "#009A0F",
+              color: isHovering ? "#fff" : "#009A0F",
             }}
           >
             START

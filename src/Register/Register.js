@@ -59,11 +59,12 @@ const App = () => {
             className="loginBtn"
             href="/Login"
             style={{
-              color: "#000",
+              color: "#fff",
               position: "absolute",
               top: "20px",
               right: "20px",
-              backgroundColor: "#FFE454",
+              background: "transparent",
+              border: "2px solid #fff",
               textDecoration: "none",
               fontFamily: "Montserrat",
               letterSpacing: "0",
@@ -72,7 +73,7 @@ const App = () => {
               borderRadius: "14px",
             }}
           >
-            Login
+            Log in
           </a>
           <div
             className="card"
@@ -133,7 +134,7 @@ const App = () => {
                       ></img>{" "}
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click" style={{opacity: "0.4"}}>
+                      <button className="click" style={{cursor: "not-allowed"}}>
                         {/* <a href=""> */}
                           Click here
                           {/* </a> */}
@@ -189,7 +190,7 @@ const App = () => {
                       </li>
                       <li>The link to the task has been provided below.</li>
                       <li style={{ listStyle: "none" }}>
-                        <button className="click" style={{opacity: "0.4"}}>
+                        <button className="click" style={{cursor: "not-allowed"}} title="Register first">
                           {/* <a href="/Technical"> */}
                             Click here
                             {/* </a> */}

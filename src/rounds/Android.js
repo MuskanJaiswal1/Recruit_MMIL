@@ -48,7 +48,7 @@ const Design = () => {
           }}
           alt="Your Image"
         />
-      </div>
+      
       <div id='first'>
           <img
             src={mmil}
@@ -124,6 +124,7 @@ const Design = () => {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

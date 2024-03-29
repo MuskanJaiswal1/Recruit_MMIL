@@ -1,3 +1,6 @@
+.main{
+    overflow: hidden;
+}
 .main img {
     width: 100vw;
     height: 145vh;

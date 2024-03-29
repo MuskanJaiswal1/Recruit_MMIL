@@ -57,9 +57,7 @@ const Login = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background:
-            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
-          // opacity: "0.6",
+          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", 
           padding: "10px",
           paddingTop: "20px",
           borderRadius: "10px",
