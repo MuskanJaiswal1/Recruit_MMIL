@@ -7,7 +7,10 @@ const WebDev = require('../models/WebDev');
 const Programming = require('../models/Programming');
 const Design = require('../models/Design');
 const Android = require('../models/Android');
-
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const authenticateToken = require('../middleware/verifyToken');
+const uuid = require('uuid');
 
 require('../db/connect');
 
@@ -90,7 +93,53 @@ routes.get('/user_list',async (req,res)=>{
 routes.get('/user', async (req, res) => {
     try {
         // Retrieve user data from the database
-        const userData = await MMIL.findOne().sort({ _id: -1 }).limit(1); // Assuming you want to retrieve one user
+        const userData = await MMIL.findOne().sort({ _id: -1 }).limit(1); 
+        
+        if (!userData) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        
+        
+        res.json(userData);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Failed to fetch user data" });
+    }
+});
+routes.post('/login', async (req, res) => {
+    try {
+        const { name, email } = req.body;
+        
+        // Check if both name and email are provided
+        if (!name || !email) {
+            return res.status(400).json({ error: "Name and email are required" });
+        }
+
+        // Check if the user with the provided name and email exists in the database
+        const user = await MMIL.findOne({ name, email });
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        
+        const secretKey = 'secret123';
+        const token = jwt.sign({ userId: user._id }, secretKey);
+        res.status(200).json({ message: "Login successful", token });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+routes.get('/userDataa', authenticateToken, async (req, res) => {
+    try {
+       
+
+        const userId = req.user.userId;
+        
+        // Retrieve user data from the database based on the user's ID
+        const userData = await MMIL.findById(userId); 
         
         if (!userData) {
             return res.status(404).json({ error: "User not found" });
@@ -105,3 +154,4 @@ routes.get('/user', async (req, res) => {
 });
 
 module.exports = routes;
+

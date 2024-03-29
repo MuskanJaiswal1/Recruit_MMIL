@@ -20,6 +20,8 @@ import Android from './rounds/Android';
 import RocketLoader from './RocketLoader/RocketLoader';
 import { useUser } from './Context';
 import Home from './Register/Home'
+import Login from './Register/Login'
+import Registered from './Register/Registered'
 
 const App = () => {
   const { userData } = useUser();
@@ -70,6 +72,8 @@ const App = () => {
             <Route path="/Android" element={<Android />} />
             <Route path="/RocketLoader" element={<RocketLoader />} />
             <Route path="/Home" element={<Home/>}/>
+            <Route path= "/Login" element = {<Login/>}/>
+            <Route path="/Registered" element={<Registered/>}/>
           </Routes>
         </BrowserRouter>
       </div>

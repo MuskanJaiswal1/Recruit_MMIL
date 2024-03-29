@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import mmil from "../assets/mmil.png";
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.svg";
+import axios from "axios";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -21,17 +22,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (response.ok) {
+      const response = await axios.post("http://localhost:5000/login", userData);
+      if (response.status === 200) {
+        const token = response.data.token; // Assuming the token is returned in the response
+        // Store the token in local storage or session storage for future use
+        localStorage.setItem("token", token);
         // Redirect to home page upon successful login
-        window.location.href = "/home";
+        window.location.href = "/registered";
       } else {
         console.error("Login failed:", response.statusText);
         // Handle error responses from the server
@@ -41,7 +38,7 @@ const Login = () => {
       // Handle network errors
     }
   };
-
+  
   return (
     <div style={{ position: "relative" }}>
       <img
@@ -212,11 +209,11 @@ const Login = () => {
           alt="Overlay Image"
           style={{
             position: "absolute",
-            marginTop: "-20%",
+            marginTop: "-14%",
             top: "-20%",
             left: "30%",
-            width: "46%",
-            height: "35%",
+            width: "40%",
+            height: "32%",
             opacity: "1",
           }}
         />
