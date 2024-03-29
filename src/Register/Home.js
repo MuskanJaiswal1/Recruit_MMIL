@@ -59,7 +59,7 @@ const UserDataComponent = () => {
     const fetchUserData = async () => {
       try {
         // Make an HTTP GET request to fetch user data from the backend
-        const response = await fetch("http://localhost:5000/user");
+        const response = await fetch("https://recruit-mmil-3.onrender.com/user");
 
         // Check if the response is successful (status code 200)
         if (!response.ok) {
