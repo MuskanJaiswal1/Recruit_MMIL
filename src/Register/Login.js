@@ -22,7 +22,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", userData);
+      const response = await axios.post("https://recruit-mmil-3.onrender.com/login", userData);
       if (response.status === 200) {
         const token = response.data.token; // Assuming the token is returned in the response
         // Store the token in local storage or session storage for future use
