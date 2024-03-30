@@ -294,7 +294,7 @@ const Name = () => {
           {userData && (
              <p class="fa-solid fa-circle-check"
           style={{
-            color: isHoverTickmark?"#FFE454":"#ffffff",
+            color: isHoverTickmark?"#ffffff":"#FFE454",
             fontSize: "4.2rem"
           }}
           onMouseEnter={handleHoverTickmark}
@@ -315,7 +315,7 @@ const Name = () => {
           {userData && (
              <p class="fa-solid fa-circle-check"
           style={{
-            color: isHoverTickmark?"#FFE454":"#ffffff",
+            color: isHoverTickmark?"#ffffff":"#FFE454",
             fontSize: "4.2rem"
           }}
           onMouseEnter={handleHoverTickmark}

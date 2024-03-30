@@ -202,7 +202,7 @@ const App = () => {
            {userData && ( 
           <p class="fa-solid fa-circle-check"
           style={{
-            color: isHoverTickmark?"#FFE454":"#ffffff",
+            color: isHoverTickmark?"#ffffff":"#FFE454",
             fontSize: "4.2rem",
             marginTop:"20px",
           }}
@@ -221,9 +221,9 @@ const App = () => {
             left: "30%",
             width: "50%",
             height: "34%",
-            objectFit: "cover", // Adjust as needed
-            borderRadius: "10px", // Adjust as needed
-            opacity: 1, // Adjust as needed
+            objectFit: "cover", 
+            borderRadius: "10px", 
+            opacity: 1, 
           }}
         />
       </div>
