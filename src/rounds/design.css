@@ -1,5 +1,6 @@
 .main{
     overflow: hidden;
+    
 }
 .main img {
     width: 100vw;
@@ -17,14 +18,15 @@
 .backBtn{
     color: #fff;
     position: absolute;
-    top: -20vh;
-    left: -28vw;
+    top: 2vh;
+    left: -26vw;
 }
 
 #first img {
-    top: 5%;
+    /* top: 5%; */
+    top: 17%;
     position: absolute;
-    left: 40%;
+    left: 44%;
     height: 15%;
     width: 14%;
     display: flex;
@@ -36,9 +38,10 @@
     width: 474px;
     height: 55px;
     border: 1px solid white;
-    top: 24%;
-    left: 30%;
     position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 16px;
 }
 
@@ -90,9 +93,13 @@
     border-radius: 10px;
     height: 710px;
     width: 464px;
-    top: 35%;
+    /* top: 35%;
     position: absolute;
-    left: 30%;
+    left: 30%; */
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d);
 }
 .technical-container{
@@ -100,9 +107,10 @@
     border-radius: 10px;
     height: 480px;
     width: 464px;
-    top: 35%;
     position: absolute;
-    left: 30%;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d);
 
 }
@@ -273,14 +281,13 @@ form:valid .submit {
     }
 
     #first img {
-        top: 10%;
-        left: 32%;
+        top: 18%;
+        left: 28%;
         height: 13%;
         width: 44%;
     }
 
     .domains {
-        left: 10%;
         width: 82%;
         height: 45px;
         
@@ -292,12 +299,10 @@ form:valid .submit {
     }
 
     .container {
-        margin-left: -20%;
         width: 82%;
         height: 705px;
     }
     .technical-container{
-        margin-left: -16%;
         width: 305px;
         height: 415px;
     }
@@ -331,8 +336,8 @@ form:valid .submit {
     .backBtn{
         color: #fff;
         position: absolute;
-        top: -150px;
-        left: -15px;
+        /* top: -150px; */
+        left: -30px;
     }
 
 }

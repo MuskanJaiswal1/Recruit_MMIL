@@ -101,13 +101,11 @@ const App = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background:
-            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
-          // opacity: "0.6",
-          padding: "10px", // Adjust as needed
+          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", 
+          padding: "10px", 
           paddingTop: "20px",
-          borderRadius: "10px", // Adjust as needed
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)", // Adjust as needed
+          borderRadius: "10px", 
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",  
           width: "23rem",
           height: "17rem"
         }}
@@ -201,6 +199,7 @@ const App = () => {
             display: tickmark? 'inline-block' : 'none',
           }}
         >
+           {userData && ( 
           <p class="fa-solid fa-circle-check"
           style={{
             color: isHoverTickmark?"#FFE454":"#ffffff",
@@ -209,9 +208,8 @@ const App = () => {
           }}
           onMouseEnter={handleHoverTickmark}
           onMouseLeave={handleUnHoverTickmark}
-              onTouchStart={handleHoverTickmark} // Trigger hover effect on touch
-          onTouchEnd={handleUnHoverTickmark}
           ></p>
+           )}
         </Link>
         <img
           src={mmil}

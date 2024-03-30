@@ -34,15 +34,6 @@ const Name = () => {
   const handleShowTickmark = (e) => {
     showTickmark(true)
   };
-  
-  const handleTouchStart = (e) => {
-    handleHoverTickmark();
-    handleShowTickmark();
-  };
-
-  const handleTouchEnd = (e) => {
-    handleUnHoverTickmark();
-  };
 
   const updateWindowSize = () => {
     setWindowSize({
@@ -147,16 +138,16 @@ const Name = () => {
     <i
       className="fa-solid fa-circle-check"
       style={{
-        color: isHoverTickmark? "#FFE454" : "#ffffff",
+        color: isHoverTickmark? "#ffffff": "#FFE454"  ,
         fontSize: "4.2rem",
         display: tickmark ? "inline-block" : "none",
         marginLeft: "auto",
         marginTop: "24px",
-        transition: "color 0.3s", // Smooth transition for color change
-        cursor: "pointer", // Change cursor to pointer on hover
+        // transition: "color 1s", 
+        cursor: "pointer", 
       }}
-      onMouseEnter={() => handleHoverTickmark(true)} // Set isHoverTickmark to true on hover
-      onMouseLeave={() => handleUnHoverTickmark(false)} // Set isHoverTickmark to false on mouse leave
+      onMouseEnter={() => handleHoverTickmark(true)} 
+      onMouseLeave={() => handleUnHoverTickmark(false)}  
     ></i>
   )}
 </Link>

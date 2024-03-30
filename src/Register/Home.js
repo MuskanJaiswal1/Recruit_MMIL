@@ -123,18 +123,18 @@ const UserDataComponent = () => {
                 className="profile"
                 style={{
                   borderRadius: "50%",
-                  backgroundColor: "#FFFAE7",
+                  backgroundColor: "#ffffff",
                   width: "50px",
                   height: "50px",
                   fontSize: "18px",
                   fontFamily: "Montserrat",
                 }}
-              >{userData.name.substring(0, 1)}</button>
+              >{userData.name.substring(0, 1).toUpperCase()}</button>
             ) : (
               <div
                 style={{
                   color: "#000",
-                  backgroundColor: "#FFFAE7",
+                  backgroundColor: "#fff",
                   padding: "5px",
                   borderRadius: "14px",
                   width: "240px",
@@ -147,14 +147,14 @@ const UserDataComponent = () => {
                   style={{
                     color: "#000",
                     borderRadius: "50%",
-                    backgroundColor: "#f9d6cd",
+                    backgroundColor: "#FFA0A0",
                     fontFamily: "Montserrat",
                     width: "50px",
                     height: "50px",
                     fontSize: "18px"
                   }}
                 >
-                  {userData.name.substring(0, 1)}
+                  {userData.name.substring(0, 1).toUpperCase()}
                 </button>
                 <p style={{
                     margin: "0",
@@ -182,11 +182,11 @@ const UserDataComponent = () => {
                     margin: "0",
                     padding: "4px",
                     marginTop: "6px",
-                    backgroundColor: "#f9d6cd",
+                    backgroundColor: "#FFA0A0",
                     objectFit: "cover",
                   borderRadius: "24px",
                 }}
-                >{userData.domain}</p>
+                >{userData.domain.toUpperCase()}</p>
               </div>
             )}
           </div>

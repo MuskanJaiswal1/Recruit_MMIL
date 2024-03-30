@@ -33,10 +33,6 @@ const Name = () => {
     showTickmark(true)
   };
 
- 
-
-
-
   const updateWindowSize = () => {
     setWindowSize({
       width: window.innerWidth,
@@ -148,16 +144,16 @@ const Name = () => {
             display: tickmark? 'inline-block' : 'none',
           }}
         >
+          {userData && (
                <p class="fa-solid fa-circle-check"
           style={{
-            color: isHoverTickmark?"#FFE454":"#ffffff",
+            color: isHoverTickmark?"#ffffff":"#FFE454",
             fontSize: "4.2rem"
           }}
           onMouseEnter={handleHoverTickmark}
           onMouseLeave={handleUnHoverTickmark}
-              onTouchStart={handleHoverTickmark} // Trigger hover effect on touch
-          onTouchEnd={handleUnHoverTickmark}
           ></p>
+          )}
         </Link>
 
         <img

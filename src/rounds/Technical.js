@@ -35,7 +35,7 @@ const Technical = () => {
           </ul>
         </div>
         <Link to="/Registered">
-          <p class="fa-solid fa-arrow-left backBtn"></p>
+          <i class="fa-solid fa-arrow-left backBtn"></i>
           </Link>
       </div>
       <div className='technical-container'>
