@@ -5,18 +5,14 @@ import tick from "../assets/Frame 13.png";
 import { Link } from "react-router-dom";
 import { useUser } from '../Context';
 import appbg from "../assets/bg-app.svg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Name = () => {
-  const { userData, setUserData } = useUser();
-  
-  const handleChange = (e) => {
-    setUserData({ ...userData, phoneNo: e.target.value });
-  };
 
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const { userData, setUserData } = useUser();
+  const [error, setError] = useState("");
+
 
   const [user, setUser] = useState({
     name: " ",
@@ -44,12 +40,45 @@ const Name = () => {
     });
   };
 
+  const handleChange = (e) => {
+    const phoneNo = e.target.value;
+    // Check if the phone number is exactly 10 digits long
+    if (/^\d{10}$/.test(phoneNo)) {
+      setUserData({ ...userData, phoneNo });
+      setError(""); // Clear the error if the phone number is valid
+    } else {
+      setError("Phone number must be exactly 10 digits long");
+    }
+  };
+
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
   useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
     window.addEventListener("resize", updateWindowSize);
     return () => {
       window.removeEventListener("resize", updateWindowSize);
     };
   }, []);
+
+  const notify = () => toast("Phone number must be exactly 10 digits long");
+
+  const handleLinkClick = (e) => {
+    // Prevent default link behavior if phone number is not 10 digits
+    if (!(/^\d{10}$/.test(userData.phoneNo))) {
+      e.preventDefault();
+      notify(); // Notify user about the incorrect phone number
+    }
+  };
 
   return (
     <div style={{ position: "relative" }}>
@@ -130,10 +159,9 @@ const Name = () => {
               color: "white",
               outline: 'none',
             }}
-            type="text"
+            type="email"
             value={userData.phoneNo}
             onChange={handleChange}
-            onFocus={handleShowTickmark}
             placeholder="Text here"
             aria-label="type here"
           />
@@ -144,8 +172,9 @@ const Name = () => {
             display: "inline-block",
             marginLeft: "auto",
             marginTop: "24px",
-            display: tickmark? 'inline-block' : 'none',
+            display: userData.phoneNo? 'inline-block' : 'none',
           }}
+         onClick={handleLinkClick}
         >
           {userData && (
           <p className="fa-solid fa-circle-check"
@@ -157,8 +186,18 @@ const Name = () => {
           onMouseLeave={handleUnHoverTickmark}
           ></p>
           )}
+        
+          <i className="fa-solid fa-circle-check"
+            style={{
+              color: isHoverTickmark ? "#FFE454" : "#ffffff",
+              fontSize: "4.2rem"
+            }}
+            onMouseEnter={handleHoverTickmark}
+            onMouseLeave={handleUnHoverTickmark}
+            onTouchStart={handleHoverTickmark} // Trigger hover effect on touch
+            onTouchEnd={handleUnHoverTickmark}
+          />
         </Link>
-
         <img
           src={mmil}
           alt="Overlay Image"
@@ -173,6 +212,7 @@ const Name = () => {
           }}
         />
       </div>
+      <ToastContainer />
     </div>
   );
 };
