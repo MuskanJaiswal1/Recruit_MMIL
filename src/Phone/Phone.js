@@ -159,7 +159,7 @@ const Name = () => {
               color: "white",
               outline: 'none',
             }}
-            type="email"
+            type="text"
             value={userData.phoneNo}
             onChange={handleChange}
             placeholder="Text here"
@@ -186,17 +186,6 @@ const Name = () => {
           onMouseLeave={handleUnHoverTickmark}
           ></p>
           )}
-        
-          <i className="fa-solid fa-circle-check"
-            style={{
-              color: isHoverTickmark ? "#FFE454" : "#ffffff",
-              fontSize: "4.2rem"
-            }}
-            onMouseEnter={handleHoverTickmark}
-            onMouseLeave={handleUnHoverTickmark}
-            onTouchStart={handleHoverTickmark} // Trigger hover effect on touch
-            onTouchEnd={handleUnHoverTickmark}
-          />
         </Link>
         <img
           src={mmil}
