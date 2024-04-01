@@ -123,7 +123,7 @@ const Name = () => {
         formType: 'MMIL' // Include the formType field
       };
       // All necessary data is available and tickmark is pressed, so save the data
-      fetch('https://recruit-mmil-3.onrender.com/name', {
+      fetch('https://recruit-mmil-4.onrender.com/name', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
