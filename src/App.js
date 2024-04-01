@@ -73,7 +73,7 @@ const App = () => {
             <Route path="/RocketLoader" element={<RocketLoader />} />
             <Route path="/Home" element={<Home/>}/>
             <Route path= "/Login" element = {<Login/>}/>
-            <Route path="/Registered" element={<Registered/>}/>
+            <Route path="/Registered/:userId" element={<Registered/>}/>
           </Routes>
         </BrowserRouter>
       </div>

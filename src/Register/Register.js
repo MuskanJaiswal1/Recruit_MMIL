@@ -44,7 +44,7 @@ const App = () => {
   return (
     <>
       <div>
-        <div className="contain" style={{overflow: "hidden"}}>
+        <div className="contain">
           <img
             src={windowSize.width <= 900 ? appbg : bg}
             alt="Your Image"
@@ -59,12 +59,11 @@ const App = () => {
             className="loginBtn"
             href="/Login"
             style={{
-              color: "#fff",
+              color: "#000",
               position: "absolute",
               top: "20px",
               right: "20px",
-              background: "transparent",
-              border: "2px solid #fff",
+              backgroundColor: "#FFE454",
               textDecoration: "none",
               fontFamily: "Montserrat",
               letterSpacing: "0",
@@ -73,7 +72,7 @@ const App = () => {
               borderRadius: "14px",
             }}
           >
-            Log in
+            Login
           </a>
           <div
             className="card"
@@ -134,23 +133,21 @@ const App = () => {
                       ></img>{" "}
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click" style={{cursor: "not-allowed"}}>
-                        {/* <a href=""> */}
-                          Click here
-                          {/* </a> */}
+                      <button className="click">
+                        <a href="">Click here</a>
                       </button>
                     </li>
                   </ul>
                 </div>
               </div>
-              <p
+              <i
                 className={`fa-solid fa-chevron-${
                   expandedCard === "aptitude" ? "down" : "right"
                 }`}
                 style={{ position: "absolute", right: "34px" }}
-              ></p>
+              ></i>
             </div>
-            {/* <Link to="/Technical" className="card-link"> */}
+            <Link to="/Technical" className="card-link">
               <div
                 className={`technical sub-card ${
                   expandedCard === "technical" ? "expanded-technical" : ""
@@ -190,23 +187,21 @@ const App = () => {
                       </li>
                       <li>The link to the task has been provided below.</li>
                       <li style={{ listStyle: "none" }}>
-                        <button className="click" style={{cursor: "not-allowed"}} title="Register first">
-                          {/* <a href="/Technical"> */}
-                            Click here
-                            {/* </a> */}
+                        <button className="click">
+                          <a href="/Technical">Click here</a>
                         </button>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <p
+                <i
                   className={`fa-solid fa-chevron-${
                     expandedCard === "technical" ? "down" : "right"
                   }`}
                   style={{ position: "absolute", right: "34px" }}
-                ></p>
+                ></i>
               </div>
-            {/* </Link> */}
+            </Link>
             <div
               className={`interview sub-card ${
                 expandedCard === "interview" ? "expanded-interview" : ""
@@ -251,12 +246,12 @@ const App = () => {
                   </ul>
                 </div>
               </div>
-              <p
+              <i
                 className={`fa-solid fa-chevron-${
                   expandedCard === "interview" ? "down" : "right"
                 }`}
                 style={{ position: "absolute", right: "34px" }}
-              ></p>
+              ></i>
             </div>
           </div>
           <img src={mmil} alt="Overlay Image" className="mmil-logo" />

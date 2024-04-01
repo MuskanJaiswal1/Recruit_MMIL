@@ -59,7 +59,7 @@ const UserDataComponent = () => {
     const fetchUserData = async () => {
       try {
         // Make an HTTP GET request to fetch user data from the backend
-        const response = await fetch("https://recruit-mmil-3.onrender.com/user");
+        const response = await fetch("http://localhost:5000/user");
 
         // Check if the response is successful (status code 200)
         if (!response.ok) {
@@ -94,13 +94,13 @@ const UserDataComponent = () => {
   return (
     <>
       <div>
-        <div className="contain" style={{overflow: "hidden"}}>
+        <div className="contain">
           <img
             src={windowSize.width <= 900 ? appbg : bg}
             alt="Your Image"
             id="imagess"
             style={{
-              width: windowSize.Width < 900 ? "100vw" : "99vw",
+              width: windowSize.Width < 900 ? "100vw" : "100vw",
               height: windowSize.Width < 900 ? "125vh" : "120vh",
               objectFit: "cover",
             }}
@@ -123,7 +123,7 @@ const UserDataComponent = () => {
                 className="profile"
                 style={{
                   borderRadius: "50%",
-                  backgroundColor: "#ffffff",
+                  backgroundColor: "#FFFAE7",
                   width: "50px",
                   height: "50px",
                   fontSize: "18px",
@@ -134,7 +134,7 @@ const UserDataComponent = () => {
               <div
                 style={{
                   color: "#000",
-                  backgroundColor: "#fff",
+                  backgroundColor: "#FFFAE7",
                   padding: "5px",
                   borderRadius: "14px",
                   width: "240px",
@@ -147,7 +147,7 @@ const UserDataComponent = () => {
                   style={{
                     color: "#000",
                     borderRadius: "50%",
-                    backgroundColor: "#FFA0A0",
+                    backgroundColor: "#f9d6cd",
                     fontFamily: "Montserrat",
                     width: "50px",
                     height: "50px",
@@ -156,10 +156,21 @@ const UserDataComponent = () => {
                 >
                   {userData.name.substring(0, 1).toUpperCase()}
                 </button>
+                <Link to="/Register">
+          <i class="fa-solid fa-arrow-left backBtn" style={{display:"flex",
+        justifyContent:"left",alignItems:"left",
+        marginTop:"-27px",
+        height:"10px",
+        fontSize:"20px",
+        marginLeft:"10px",
+        color:"black",
+        textDecoration:"none"
+        }}></i>
+          </Link>
                 <p style={{
                     margin: "0",
                     padding: "0",
-                    marginTop: "6px",
+                    marginTop: "19px",
                     fontSize: "14px",
                   fontWeight: "bold"
                 }}>{userData.name}</p>
@@ -182,11 +193,12 @@ const UserDataComponent = () => {
                     margin: "0",
                     padding: "4px",
                     marginTop: "6px",
-                    backgroundColor: "#FFA0A0",
+                    backgroundColor: "#f9d6cd",
                     objectFit: "cover",
                   borderRadius: "24px",
                 }}
-                >{userData.domain.toUpperCase()}</p>
+                >{userData.domain}</p>
+               
               </div>
             )}
           </div>

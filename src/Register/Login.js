@@ -3,6 +3,7 @@ import mmil from "../assets/mmil.png";
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.svg";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -19,28 +20,25 @@ const Login = () => {
     height: window.innerHeight,
   });
 
+  const history = useNavigate()
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://recruit-mmil-3.onrender.com/login", userData);
+      const response = await axios.post("http://localhost:5000/login", userData);
       if (response.status === 200) {
-        const token = response.data.token; // Assuming the token is returned in the response
-        // Store the token in local storage or session storage for future use
-        localStorage.setItem("token", token);
-        // Redirect to home page upon successful login
-        window.location.href = "/registered";
+        const userId = response.data.userId; // Assuming the userId is returned in the response
+        history(`/registered/${userId}`);
       } else {
         console.error("Login failed:", response.statusText);
-        // Handle error responses from the server
       }
     } catch (error) {
       console.error("Login error:", error);
-      // Handle network errors
     }
   };
   
   return (
-    <div style={{ position: "relative", overflow: "hidden" }} >
+    <div style={{ position: "relative" }}>
       <img
         src={windowSize.width <= 900 ? appbg : bg}
         alt="Your Image"
@@ -57,7 +55,9 @@ const Login = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", 
+          background:
+            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
+          // opacity: "0.6",
           padding: "10px",
           paddingTop: "20px",
           borderRadius: "10px",
