@@ -34,7 +34,7 @@ const Technical = () => {
             <li><a href="/Android">Android</a></li>
           </ul>
         </div>
-        <Link to="/Registered">
+        <Link to="/Register">
           <i class="fa-solid fa-arrow-left backBtn"></i>
           </Link>
       </div>

@@ -58,19 +58,6 @@ const App = () => {
           <a
             className="loginBtn"
             href="/Login"
-            style={{
-              color: "#000",
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              backgroundColor: "#FFE454",
-              textDecoration: "none",
-              fontFamily: "Montserrat",
-              letterSpacing: "0",
-              padding: "4px 12px",
-              cursor: "pointer",
-              borderRadius: "14px",
-            }}
           >
             Login
           </a>

@@ -146,9 +146,9 @@ const Name = () => {
          src={windowSize.width <= 900 ? appbg : bg}
         alt="Your Image"
         style={{
-          width: windowSize.Width < 900 ? "100vw" : "100vw", // Adjust as needed
-          height: windowSize.Width < 900 ? "100vh" : "100vh", // Adjust as needed
-          objectFit: "cover", // Adjust as needed
+          width: windowSize.Width < 900 ? "100vw" : "100vw", 
+          height: windowSize.Width < 900 ? "100vh" : "100vh", 
+          objectFit: "cover", 
         }}
       />
 
@@ -158,7 +158,7 @@ const Name = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
+          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", 
           // opacity: "0.6",
           padding: "10px",
           paddingTop: "20px",
@@ -206,7 +206,6 @@ const Name = () => {
               color: isActive1 ? "#FFE454" : "#1a1a1a",
               fontWeight: "bold",
               fontFamily: "Montserrat"
-              //   width: "80px",
             }}
            
             onMouseEnter={handleMouseEnter1}
@@ -227,7 +226,6 @@ const Name = () => {
               color: isActive2 ? "#FFE454" : "#1a1a1a",
               fontWeight: "bold",
               fontFamily: "Montserrat"
-              //   width: "80px",
             }}
             
             onMouseEnter={handleMouseEnter2}
@@ -248,7 +246,6 @@ const Name = () => {
               color: isActive3 ? "#FFE454" : "#1a1a1a",
               fontWeight: "bold",
               fontFamily: "Montserrat"
-              //   width: "80px",
             }}
            
             onMouseEnter={handleMouseEnter3}

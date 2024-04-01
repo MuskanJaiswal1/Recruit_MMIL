@@ -151,17 +151,7 @@ const RegisteredPage = () => {
               >
                 {userData.name.substring(0, 1)}
               </button>
-              <Link to="/Register">
-          <i class="fa-solid fa-arrow-left backBtn" style={{display:"flex",
-        justifyContent:"left",alignItems:"left",
-        marginTop:"-27px",
-        height:"10px",
-        fontSize:"20px",
-        marginLeft:"10px",
-        color:"black",
-        textDecoration:"none"
-        }}></i>
-          </Link>
+              
               <p style={{
                   margin: "0",
                   padding: "0",
@@ -197,6 +187,20 @@ const RegisteredPage = () => {
             </div>
           )}
         </div>
+
+        <Link to="/Register">
+                  <p
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    title = "Logout"
+                    style={{
+                      position: "absolute",
+                      top: "34px",
+                      left: "30px",
+                      fontSize: "20px",
+                      color: "white",
+                    }}
+                  ></p>
+                </Link>
 
         <div
           className="card"

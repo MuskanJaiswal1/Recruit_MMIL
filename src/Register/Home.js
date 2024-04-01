@@ -59,7 +59,9 @@ const UserDataComponent = () => {
     const fetchUserData = async () => {
       try {
         // Make an HTTP GET request to fetch user data from the backend
-        const response = await fetch("https://recruit-mmil-4.onrender.com/user");
+        const response = await fetch(
+          "https://recruit-mmil-4.onrender.com/user"
+        );
 
         // Check if the response is successful (status code 200)
         if (!response.ok) {
@@ -114,7 +116,7 @@ const UserDataComponent = () => {
               fontSize: "10px",
               textAlign: "center",
               letterSpacing: "0",
-              zIndex: "100"
+              zIndex: "100",
             }}
           >
             {!showNewElement ? (
@@ -129,7 +131,9 @@ const UserDataComponent = () => {
                   fontSize: "18px",
                   fontFamily: "Montserrat",
                 }}
-              >{userData.name.substring(0, 1).toUpperCase()}</button>
+              >
+                {userData.name.substring(0, 1).toUpperCase()}
+              </button>
             ) : (
               <div
                 style={{
@@ -151,57 +155,69 @@ const UserDataComponent = () => {
                     fontFamily: "Montserrat",
                     width: "50px",
                     height: "50px",
-                    fontSize: "18px"
+                    fontSize: "18px",
                   }}
                 >
                   {userData.name.substring(0, 1).toUpperCase()}
                 </button>
-                <Link to="/Register">
-          <i class="fa-solid fa-arrow-left backBtn" style={{display:"flex",
-        justifyContent:"left",alignItems:"left",
-        marginTop:"-27px",
-        height:"10px",
-        fontSize:"20px",
-        marginLeft:"10px",
-        color:"black",
-        textDecoration:"none"
-        }}></i>
-          </Link>
-                <p style={{
+                <p
+                  style={{
                     margin: "0",
                     padding: "0",
                     marginTop: "19px",
                     fontSize: "14px",
-                  fontWeight: "bold"
-                }}>{userData.name}</p>
-                <hr 
-                style={{padding: "0", margin: "0"}}
-                />
-                <p style={{
+                    fontWeight: "bold",
+                  }}
+                >
+                  {userData.name}
+                </p>
+                <hr style={{ padding: "0", margin: "0" }} />
+                <p
+                  style={{
                     margin: "0",
                     padding: "0",
                     marginTop: "6px",
-                }}
-                >{userData.email}</p>
-                <p style={{
+                  }}
+                >
+                  {userData.email}
+                </p>
+                <p
+                  style={{
                     margin: "0",
                     padding: "0",
                     marginTop: "6px",
-                }}
-                >{userData.phoneNo}</p>
-                <p style={{
+                  }}
+                >
+                  {userData.phoneNo}
+                </p>
+                <p
+                  style={{
                     margin: "0",
                     padding: "4px",
                     marginTop: "6px",
                     backgroundColor: "#f9d6cd",
                     objectFit: "cover",
-                  borderRadius: "24px",
-                }}
-                >{userData.domain}</p>
-               
+                    borderRadius: "24px",
+                  }}
+                >
+                  {userData.domain}
+                </p>
               </div>
             )}
           </div>
+          <Link to="/Register">
+                  <p
+                    class="fa-solid fa-arrow-right-from-bracket"
+                    title="Logout"
+                    style={{
+                      position: "absolute",
+                      top: "34px",
+                      left: "30px",
+                      fontSize: "20px",
+                      color: "white",
+                    }}
+                  ></p>
+                </Link>
 
           <div
             className="card"

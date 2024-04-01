@@ -60,7 +60,7 @@ const Design = () => {
             <li><a href="/Webdev">Web-Dev</a></li>
             <li><a href="/Android">Android</a></li>
           </ul>
-          <Link to="/Registered">
+          <Link to="/Register">
           <p class="fa-solid fa-arrow-left backBtn"></p>
           </Link>
         </div>
