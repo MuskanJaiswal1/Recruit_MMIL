@@ -12,8 +12,6 @@ import appbg from "../assets/bg-app.svg";
 const App = () => {
   const { userData, setUserData } = useUser();
 
-  
-
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -40,6 +38,7 @@ const App = () => {
     setIsActive2(false);
     globalData.myGlobalVariable = '1st year';
     setUserData({ ...userData, year:"1st" });
+    showTickmark(true);
   }
 
   const [isActive2, setIsActive2] = useState(false);
@@ -49,6 +48,7 @@ const App = () => {
     setIsActive1(false);
     globalData.myGlobalVariable = '2nd year';
     setUserData({ ...userData, year:"2nd" });
+    showTickmark(true);
   }
 
   const [isHovering1, setIsHovering1] = useState(false);
@@ -157,8 +157,6 @@ const App = () => {
               fontFamily:'Montserrat',
               fontWieght:'Bold'
             }}
-            
-            onFocus={handleShowTickmark}
             onMouseEnter={handleMouseEnter1}
             onMouseLeave={handleMouseLeave1}
             onClick={handleActive1}
@@ -181,8 +179,6 @@ const App = () => {
               fontFamily:'Montserrat',
               fontWieght:'Bold'
             }}
-           
-            onFocus={handleShowTickmark}
             onMouseEnter={handleMouseEnter2}
             onMouseLeave={handleMouseLeave2}
             onClick={handleActive2}
