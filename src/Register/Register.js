@@ -120,8 +120,10 @@ const App = () => {
                       ></img>{" "}
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click">
-                        <a href="">Click here</a>
+                      <button className="click" style={{cursor: "not-allowed"}}>
+                        {/* <a href=""> */}
+                          Click here
+                          {/* </a> */}
                       </button>
                     </li>
                   </ul>
@@ -134,7 +136,7 @@ const App = () => {
                 style={{ position: "absolute", right: "34px" }}
               ></i>
             </div>
-            <Link to="/Technical" className="card-link">
+            {/* <Link to="/Technical" className="card-link"> */}
               <div
                 className={`technical sub-card ${
                   expandedCard === "technical" ? "expanded-technical" : ""
@@ -174,8 +176,10 @@ const App = () => {
                       </li>
                       <li>The link to the task has been provided below.</li>
                       <li style={{ listStyle: "none" }}>
-                        <button className="click">
-                          <a href="/Technical">Click here</a>
+                        <button className="click" style={{cursor: "not-allowed"}}>
+                          {/* <a href="/Technical"> */}
+                            Click here
+                            {/* </a> */}
                         </button>
                       </li>
                     </ul>
@@ -188,7 +192,7 @@ const App = () => {
                   style={{ position: "absolute", right: "34px" }}
                 ></i>
               </div>
-            </Link>
+            {/* </Link> */}
             <div
               className={`interview sub-card ${
                 expandedCard === "interview" ? "expanded-interview" : ""
