@@ -121,10 +121,8 @@ routes.post('/login', async (req, res) => {
             return res.status(404).json({ error: "User not found" });
         }
 
-        
-        const secretKey = 'secret123';
-        const token = jwt.sign({ userId: user._id }, secretKey);
-        res.status(200).json({ message: "Login successful", token });
+        // Return user ID upon successful login
+        res.status(200).json({ message: "Login successful", userId: user._id });
 
     } catch (error) {
         console.error(error);
@@ -132,24 +130,22 @@ routes.post('/login', async (req, res) => {
     }
 });
 
-routes.get('/userDataa', authenticateToken, async (req, res) => {
+routes.get('/user/:userId', async (req, res) => {
     try {
-       
-
-        const userId = req.user.userId;
+        const userId = req.params.userId;
         
-        // Retrieve user data from the database based on the user's ID
-        const userData = await MMIL.findById(userId); 
-        
-        if (!userData) {
+        // Find user by user ID
+        const user = await MMIL.findById(userId);
+        if (!user) {
             return res.status(404).json({ error: "User not found" });
         }
-        
-        // Send the user data as a JSON response
-        res.json(userData);
+
+        // Return user details
+        res.status(200).json(user);
+
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "Failed to fetch user data" });
+        res.status(500).json({ error: "Internal Server Error" });
     }
 });
 

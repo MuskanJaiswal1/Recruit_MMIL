@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const FormData = new mongoose.Schema({
-    id:{
-        type:Number
-    },
+   
     name:{
         type:String,
         required: true
