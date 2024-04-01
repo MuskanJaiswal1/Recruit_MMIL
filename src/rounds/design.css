@@ -1,21 +1,23 @@
-.main{
+.main {
     overflow: hidden;
-    
+
 }
+
 .main img {
     width: 100vw;
     height: 145vh;
     background-size: cover;
     background-position: center;
 }
-.technical-main img{
+
+.technical-main img {
     width: 100vw;
     height: 130vh;
     background-size: cover;
     background-position: center;
 }
 
-.backBtn{
+.backBtn {
     color: #fff;
     position: absolute;
     top: 2vh;
@@ -57,37 +59,50 @@
     margin-left: -2%;
     margin-right: 4%;
 }
-.fields ul li a{
+
+.fields ul li a {
     text-decoration: none;
     color: white;
     cursor: pointer;
     letter-spacing: 0px;
 }
 
-.fields ul li:first-child:hover, .fields ul li:first-child:active{
-    border-bottom: 2px solid  #FB0707;
+.fields ul li:first-child:hover,
+.fields ul li:first-child:active {
+    border-bottom: 2px solid #FB0707;
 }
-#des{
-    border-bottom: 2px solid  #FB0707;
+
+#des {
+    border-bottom: 2px solid #FB0707;
 }
-.fields ul li:nth-child(2):hover, .fields ul li:nth-child(2):active{
+
+.fields ul li:nth-child(2):hover,
+.fields ul li:nth-child(2):active {
     border-bottom: 2px solid #FFE454;
 }
-.programming{
+
+.programming {
     border-bottom: 2px solid #FFE454;
 }
-.fields ul li:nth-child(3):hover, .fields ul li:nth-child(3):active{
+
+.fields ul li:nth-child(3):hover,
+.fields ul li:nth-child(3):active {
     border-bottom: 2px solid #0D99FF;
 }
-.web{
+
+.web {
     border-bottom: 2px solid #0D99FF;
 }
-.fields ul li:nth-child(4):hover, .fields ul li:nth-child(4):active{
+
+.fields ul li:nth-child(4):hover,
+.fields ul li:nth-child(4):active {
     border-bottom: 2px solid #32C766;
 }
-.and{
+
+.and {
     border-bottom: 2px solid #32C766;
 }
+
 .container {
     border: 1px solid white;
     border-radius: 10px;
@@ -100,9 +115,10 @@
     top: 86%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d);
+    background: linear-gradient(to right, #666666, #4d4d4d, #262626, #1a1a1a, #0d0d0d);
 }
-.technical-container{
+
+.technical-container {
     border: 1px solid white;
     border-radius: 10px;
     height: 480px;
@@ -111,7 +127,7 @@
     top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d);
+    background: linear-gradient(to right, #666666, #4d4d4d, #262626, #1a1a1a, #0d0d0d);
 
 }
 
@@ -163,41 +179,47 @@
     padding: 5px;
 }
 
-.webdev p, .instructions p {
+.webdev p,
+.instructions p {
     font-size: 12px;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.webdev h6, .instructions h6 {
+.webdev h6,
+.instructions h6 {
     font-size: 10px;
     margin-top: -8px;
 }
 
-.webdev h1, .instructions h1 {
+.webdev h1,
+.instructions h1 {
     font-size: 24px;
     font-family: Montserrat;
     margin-top: -14px;
 }
 
-.webdev h5, .instructions h5 {
+.webdev h5,
+.instructions h5 {
     font-size: 15px;
     margin-top: 7%;
     font-weight: 500;
     margin-bottom: 4%;
 }
 
-.webdev ul, .instructions ul {
+.webdev ul,
+.instructions ul {
     font-size: 12px;
     text-align: left;
 }
 
-.webdev ul li, .instructions ul li {
+.webdev ul li,
+.instructions ul li {
     margin-left: 14px;
     text-align: left;
 }
 
-label{
+label {
     font-weight: 400;
     font-size: 10px;
     display: flex;
@@ -210,7 +232,7 @@ label{
     align-items: left;
     margin-left: 16%;
     width: 70%;
-    height: 40px; 
+    height: 40px;
     box-sizing: border-box;
     border: 1px solid rgba(29, 29, 29, 1);
     border-radius: 10px;
@@ -226,34 +248,38 @@ label{
     color: #000;
     font-size: 14px;
     border-bottom: 1px solid rgba(29, 29, 29, 1);
-    box-sizing: border-box; 
-    height: 100%; 
+    box-sizing: border-box;
+    height: 100%;
 }
-.inputBox input::placeholder{
-    opacity: 0.4;    
+
+.inputBox input::placeholder {
+    opacity: 0.4;
 }
-.submit{
-background-color: #6A6A6A;
-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
-outline: none;
-border: none;
-border-radius: 15px;
-font-size: 16px;
-font-weight: 600;
-padding: 6px 16px;
-margin: 1rem 0rem;
+
+.submit {
+    background-color: #6A6A6A;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 16px;
+    margin: 1rem 0rem;
 }
-.submit:hover{
-background-color: #FFFFFF;
-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
-color: #0D99FF;
-border-radius: 15px;
+
+.submit:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    color: #0D99FF;
+    border-radius: 15px;
 }
-.submit:active{
-background: #7BFD88;
-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
-border-radius: 15px;
-color: #0D99FF;
+
+.submit:active {
+    background: #7BFD88;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    color: #0D99FF;
 }
 
 .website {
@@ -266,22 +292,24 @@ color: #0D99FF;
 
 form:valid .submit {
     background-color: #7BFD88;
-  }
-  form:valid .submit:hover {
+}
+
+form:valid .submit:hover {
     background-color: #FFFFFF;
-  }
+}
 
 @media screen and (max-width: 900px) {
     .main img {
         height: 145vh;
     }
-    .technical-main img{
+
+    .technical-main img {
         height: 110vh;
         width: 100vw;
     }
 
     #first img {
-        top: 18%;
+        top: 8%;
         left: 28%;
         height: 13%;
         width: 44%;
@@ -290,7 +318,11 @@ form:valid .submit {
     .domains {
         width: 82%;
         height: 45px;
-        
+        position: absolute;
+        top: 29%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
     }
 
     .fields ul li {
@@ -302,7 +334,8 @@ form:valid .submit {
         width: 82%;
         height: 705px;
     }
-    .technical-container{
+
+    .technical-container {
         width: 305px;
         height: 415px;
     }
@@ -333,7 +366,8 @@ form:valid .submit {
     .webdev {
         width: 74vw;
     }
-    .backBtn{
+
+    .backBtn {
         color: #fff;
         position: absolute;
         /* top: -150px; */

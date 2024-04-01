@@ -106,15 +106,16 @@
 }
 
 .loginBtn {
-    color: #000;
+    color: #fff;
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #FFE454;
+    background: transparent;
+    border: 2px solid #fff;
     text-decoration: none;
     font-family: "Montserrat";
     letter-spacing: 0;
-    padding: 4px 12px;
+    padding: 6px 12px;
     cursor: pointer;
     border-radius: 14px;
 }

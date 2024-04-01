@@ -1,16 +1,44 @@
 import React, { useState, useEffect } from "react";
 import bg from "../assets/bg.jpg";
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
-import tick from "../assets/Frame 13.png";
 import { Link } from "react-router-dom";
 import { useUser } from '../Context';
 import appbg from "../assets/bg-app.svg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Name = () => {
   const { userData, setUserData } = useUser();
+  const [formValid, setFormValid] = useState(false);
 
   const handleChange = (e) => {
-    setUserData({ ...userData, email: e.target.value });
+    const newEmail = e.target.value;
+    setUserData({ ...userData, email: newEmail });
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (newEmail.trim() === '') {
+      setFormValid(false);
+      if (!toast.isActive("emptyEmailToast")) {
+        toast.error("Email cannot be empty", { toastId: "emptyEmailToast" });
+      }
+      if (toast.isActive("invalidEmailToast")) {
+        toast.dismiss("invalidEmailToast"); 
+      }
+    } else if (emailRegex.test(newEmail)) {
+      setFormValid(true);
+      toast.dismiss("emptyEmailToast"); // Dismiss the empty email toast if email is valid
+      if (toast.isActive("invalidEmailToast")) {
+        toast.dismiss("invalidEmailToast"); // Dismiss the invalid email toast if email is valid
+      }
+    } else {
+      setFormValid(false);
+      if (!toast.isActive("invalidEmailToast")) {
+        toast.error("Invalid Email", { toastId: "invalidEmailToast" });
+      }
+      if (toast.isActive("emptyEmailToast")) {
+        toast.dismiss("emptyEmailToast"); 
+      }
+    }
   };
 
   const [windowSize, setWindowSize] = useState({
@@ -29,9 +57,11 @@ const Name = () => {
     setHoverTickmark(false);
   };
 
-  const handleShowTickmark = (e) => {
-    showTickmark(true)
-  };
+  useEffect(() => {
+    if (formValid) {
+      showTickmark(true);
+    }
+  }, [formValid]); 
 
   const updateWindowSize = () => {
     setWindowSize({
@@ -130,7 +160,6 @@ const Name = () => {
             type="email"
             value={userData.email}
             onChange={handleChange}
-            onFocus={handleShowTickmark}
             placeholder="Text here"
             aria-label="type here"
           />

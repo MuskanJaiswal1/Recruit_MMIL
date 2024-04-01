@@ -7,13 +7,27 @@ import { Link } from "react-router-dom";
 import { useUser } from '../Context';
 import '../phone.css';
 import '../style.css';
-import RocketLoader from '../RocketLoader/RocketLoader';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Name = () => {
   const { userData, setUserData } = useUser();
+  const [formValid, setFormValid] = useState(false);
 
   const handleChange = (e) => {
-    setUserData({ ...userData, name: e.target.value });
+    const newName = e.target.value;
+    setUserData({ ...userData, name: newName });
+
+    if(newName.length>=3){
+      setFormValid(true);
+    }
+    else if(newName.trim() === ''){
+      setFormValid(false);
+      toast.error("Name cannot be empty");
+    }
+    else{
+      setFormValid(false);
+    }
   };
 
   const [windowSize, setWindowSize] = useState({
@@ -31,9 +45,11 @@ const Name = () => {
     setHoverTickmark(false);
   };
 
-  const handleShowTickmark = (e) => {
-    showTickmark(true)
-  };
+  useEffect(() => {
+    if (formValid) {
+      showTickmark(true);
+    }
+  }, [formValid]); 
 
   const updateWindowSize = () => {
     setWindowSize({
@@ -55,9 +71,9 @@ const Name = () => {
         src={windowSize.width <= 900 ? appbg : bg}
         alt="Your Image"
         style={{
-          width: windowSize.Width < 900 ? "100vw" : "100vw", // Adjust as needed
-          height: windowSize.Width < 900 ? "100vh" : "100vh", // Adjust as needed
-          objectFit: "cover", // Adjust as needed
+          width: windowSize.Width < 900 ? "100vw" : "100vw", 
+          height: windowSize.Width < 900 ? "100vh" : "100vh", 
+          objectFit: "cover", 
         }}
       />
 
@@ -67,8 +83,7 @@ const Name = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
-          // opacity: "0.6",
+          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)",
           padding: "10px",
           paddingTop: "20px",
           borderRadius: "10px",
@@ -128,7 +143,6 @@ const Name = () => {
             type="text"
             value={userData.name}
             onChange={handleChange}
-            onFocus={handleShowTickmark}
             placeholder="Text here"
             aria-label="type here"
           />
@@ -143,7 +157,6 @@ const Name = () => {
         display: tickmark ? "inline-block" : "none",
         marginLeft: "auto",
         marginTop: "24px",
-        // transition: "color 1s", 
         cursor: "pointer", 
       }}
       onMouseEnter={() => handleHoverTickmark(true)} 

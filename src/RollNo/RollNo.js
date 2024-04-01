@@ -6,14 +6,29 @@ import { Link } from "react-router-dom";
 import { useUser } from '../Context';
 import "../style.css";
 import appbg from "../assets/bg-app.svg"; 
-import RocketLoader from '../RocketLoader/RocketLoader';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Name = () => {
   const { userData, setUserData } = useUser();
+  
+  const [formValid, setFormValid] = useState(false);
 
   const handleChange = (e) => {
-    setUserData({ ...userData, rollNo: e.target.value });
+    const newRollNo = e.target.value;
+    setUserData({ ...userData, rollNo: newRollNo });
+    if(newRollNo.length>=5){
+      setFormValid(true);
+    }
+    else if(newRollNo.trim() === ''){
+      setFormValid(false);
+      toast.error("RollNo cannot be empty");
+    }
+    else{
+      setFormValid(false);
+    }
   };
+
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -29,10 +44,12 @@ const Name = () => {
     setHoverTickmark(false);
   };
 
-  const handleShowTickmark = (e) => {
-    showTickmark(true)
-  };
-
+  
+  useEffect(() => {
+    if (formValid) {
+      showTickmark(true);
+    }
+  }, [formValid]); 
 
   const updateWindowSize = () => {
     setWindowSize({
@@ -54,9 +71,9 @@ const Name = () => {
          src={windowSize.width <= 900 ? appbg : bg}
         alt="Your Image"
         style={{
-          width: windowSize.Width < 900 ? "100vw" : "100vw", // Adjust as needed
-          height: windowSize.Width < 900 ? "100vh" : "100vh", // Adjust as needed
-          objectFit: "cover", // Adjust as needed
+          width: windowSize.Width < 900 ? "100vw" : "100vw", 
+          height: windowSize.Width < 900 ? "100vh" : "100vh", 
+          objectFit: "cover", 
         }}
       />
 
@@ -66,8 +83,7 @@ const Name = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
-          // opacity: "0.6",
+          background: "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", 
           padding: "10px",
           paddingTop: "20px",
           borderRadius: "10px",
@@ -130,7 +146,6 @@ const Name = () => {
           value={userData.rollNo}
           onChange={handleChange}
           placeholder="Text here"
-          onFocus={handleShowTickmark}
           aria-label="type here"
         />
         </div>

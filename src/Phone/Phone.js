@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import bg from "../assets/bg.jpg";
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
-import tick from "../assets/Frame 13.png";
 import { Link } from "react-router-dom";
 import { useUser } from '../Context';
 import appbg from "../assets/bg-app.svg";
@@ -46,8 +45,12 @@ const Name = () => {
     if (/^\d{10}$/.test(phoneNo)) {
       setUserData({ ...userData, phoneNo });
       setError(""); // Clear the error if the phone number is valid
+      toast.dismiss("Toast");
     } else {
       setError("Phone number must be exactly 10 digits long");
+      if (!toast.isActive("Toast")) {
+        toast.error("Phone number must contain exactly 10 digits", { toastId: "Toast" });
+      }
     }
   };
 
