@@ -37,7 +37,6 @@
 }
 
 .domains {
-    
     width: 474px;
     height: 55px;
     border: 1px solid white;
@@ -121,7 +120,7 @@
 }
 
 .technical-container {
-    margin-top: 50px;
+    margin-top: 35px;
     border: 1px solid white;
     border-radius: 10px;
     height: 480px;

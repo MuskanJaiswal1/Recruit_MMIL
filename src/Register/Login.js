@@ -5,6 +5,8 @@ import appbg from "../assets/bg-app.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -35,6 +37,8 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Login error:", error);
+      toast.error("User not registered! Register using a unique email id.");
+      toast.error(error);
     }
   };
   
@@ -171,19 +175,8 @@ const Login = () => {
 
          
           <button
+          class= "loginPageBtn"
             type="submit"
-            style={{
-              padding: "10px",
-              fontWeight: "bolder",
-              borderRadius: "14px",
-              cursor: "pointer",
-              backgroundColor: "#FFE454",
-              width: "15rem",
-              fontFamily: "Montserrat",
-              letterSpacing: "0",
-              fontSize: "22px",
-              marginTop: "3rem",
-            }}
           >
             Login
           </button>

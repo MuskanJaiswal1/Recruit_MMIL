@@ -148,7 +148,7 @@ const Name = () => {
           />
         </div>
         <Link to="/RollNo">
-  {userData && ( // Check if data is available
+  {userData && (
     <i
       className="fa-solid fa-circle-check"
       style={{
