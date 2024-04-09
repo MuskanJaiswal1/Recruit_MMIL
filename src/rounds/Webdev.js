@@ -31,11 +31,11 @@ const Design = () => {
         if (!response.ok) {
             throw new Error('Failed to submit form');
         }
-
-        // Handle successful form submission (e.g., show a success message)
         console.log('Form submitted successfully');
+        setPhoneNo("");
+        setGithubLink("");
+        setWebsiteLink("");
     } catch (error) {
-        // Handle error (e.g., show an error message)
         console.error('Failed to submit form', error);
     }
 };

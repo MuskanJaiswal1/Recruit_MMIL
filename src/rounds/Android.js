@@ -29,11 +29,11 @@ const Design = () => {
       if (!response.ok) {
         throw new Error('Failed to submit form');
       }
-
-      // Handle successful form submission
       console.log('Form submitted successfully');
+      setPhoneNumber("");
+      setGithubLink("");
+      setGDriveLink("");
     } catch (error) {
-      // Handle error
       console.error('Failed to submit form', error);
     }
   };

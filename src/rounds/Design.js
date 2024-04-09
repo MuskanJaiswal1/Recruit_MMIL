@@ -1,44 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.jpg";
-import './design.css';
+import "./design.css";
 import { Link } from "react-router-dom";
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
 const Design = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [figmaLink, setFigmaLink] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [figmaLink, setFigmaLink] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://recruit-mmil-4.onrender.com/name', {
-        method: 'POST',
+      const response = await fetch("https://recruit-mmil-4.onrender.com/name", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          formType: 'Design',
+          formType: "Design",
           phoneNumber: phoneNumber,
-          figmaLink: figmaLink
-        })
+          figmaLink: figmaLink,
+        }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error("Failed to submit form");
       }
-
-      // Handle successful form submission (e.g., show a success message)
-      console.log('Form submitted successfully');
+      console.log("Form submitted successfully");
+      setPhoneNumber("");
+      setFigmaLink("");
     } catch (error) {
-      // Handle error (e.g., show an error message)
-      console.error('Failed to submit form', error);
+      console.error("Failed to submit form", error);
     }
   };
 
   return (
     <>
-      <div className='main'>
+      <div className="main">
         <img
           src={window.innerWidth <= 900 ? appbg : bg}
           style={{
@@ -47,43 +46,53 @@ const Design = () => {
           alt="Your Image"
         />
       </div>
-      <div id='first'>
-          <img
-            src={mmil}
-            alt="Overlay Image"
-          />
+      <div id="first">
+        <img src={mmil} alt="Overlay Image" />
       </div>
-      <div className='domains'>
-        <div className='fields'>
+      <div className="domains">
+        <div className="fields">
           <ul>
-            <li className='design' id='des'><Link to="/Design">Design</Link></li>
-            <li><Link to="/Programming">Programming</Link></li>
-            <li><Link to="/Webdev">Web-Dev</Link></li>
-            <li><Link to="/Android">Android</Link></li>
+            <li className="design" id="des">
+              <Link to="/Design">Design</Link>
+            </li>
+            <li>
+              <Link to="/Programming">Programming</Link>
+            </li>
+            <li>
+              <Link to="/Webdev">Web-Dev</Link>
+            </li>
+            <li>
+              <Link to="/Android">Android</Link>
+            </li>
           </ul>
           <Link to="/Register">
-          <p class="fa-solid fa-arrow-left backBtn"></p>
+            <p class="fa-solid fa-arrow-left backBtn"></p>
           </Link>
         </div>
       </div>
-      <div className='container'>
-        <div className='rounds'>
+      <div className="container">
+        <div className="rounds">
           <p>Tasks</p>
-          <div className='webdev'>
+          <div className="webdev">
             <p>Round 2</p>
-            <h1 className='heading '> Design</h1>
-            <h6 className='task'>Task round to check your skills</h6>
+            <h1 className="heading "> Design</h1>
+            <h6 className="task">Task round to check your skills</h6>
             <h5>Instructions for Students</h5>
             <ul>
-              <li>You are required to choose ANY ONE task from <Link to=""> here</Link>. </li>
+              <li>
+                You are required to choose ANY ONE task from{" "}
+                <Link to=""> here</Link>.{" "}
+              </li>
               <li> The task deadline is 1pm IST on 16-04-2023. </li>
-              <li>The students has to complete the task in before the deadline.</li>
+              <li>
+                The students has to complete the task in before the deadline.
+              </li>
               <li>Task should be submitted below.</li>
             </ul>
             <h5>Details to be filled by Students.</h5>
             <form onSubmit={handleSubmit}>
               <label htmlFor="phoneNumber">Phone Number*</label>
-              <div className='inputBox'>
+              <div className="inputBox">
                 <input
                   id="phoneNumber"
                   className="form"
@@ -96,7 +105,7 @@ const Design = () => {
                 />
               </div>
               <label htmlFor="figmaLink">Figma/Adobe Xd Link*</label>
-              <div className='inputBox'>
+              <div className="inputBox">
                 <input
                   id="figmaLink"
                   className="form"
@@ -108,7 +117,7 @@ const Design = () => {
                   required
                 />
               </div>
-              <button className="submit" type="submit">Submit</button>
+                <button className="submit" type="submit" onClick={handleSubmit}>Submit Task</button>
             </form>
           </div>
         </div>
@@ -118,4 +127,3 @@ const Design = () => {
 };
 
 export default Design;
-
