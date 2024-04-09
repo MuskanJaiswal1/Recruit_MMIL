@@ -9,7 +9,7 @@ const Design = require('../models/Design');
 const Android = require('../models/Android');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const authenticateToken = require('../middleware/verifyToken');
+
 const uuid = require('uuid');
 
 require('../db/connect');
