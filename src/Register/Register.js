@@ -51,7 +51,7 @@ const App = () => {
             id="imagess"
             style={{
               width: windowSize.Width < 900 ? "100vw" : "100vw",
-              height: windowSize.Width < 900 ? "125vh" : "120vh",
+              height: windowSize.Width < 900 ? "125vh" : "129vh",
               objectFit: "cover",
             }}
           />
