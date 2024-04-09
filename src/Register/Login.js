@@ -4,6 +4,7 @@ import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -20,7 +21,7 @@ const Login = () => {
     height: window.innerHeight,
   });
 
-  const history = useNavigate()
+  const history = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,8 +57,7 @@ const Login = () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           background:
-            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
-          // opacity: "0.6",
+            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)",
           padding: "10px",
           paddingTop: "20px",
           borderRadius: "10px",
@@ -93,7 +93,7 @@ const Login = () => {
               marginTop: "-10px",
             }}
           >
-            PhoneNo
+            Phone Number
           </p>
 
           <div
@@ -117,9 +117,9 @@ const Login = () => {
                 color: "white",
                 outline: "none",
               }}
-              type="text"
+              type="tel"
               name="phoneNo"
-              placeholder="Text here"
+              placeholder="Enter your phoneNo number"
               value={userData.phoneNo}
               onChange={handleChange}
             />
@@ -163,12 +163,13 @@ const Login = () => {
               }}
               type="email"
               name="email"
-              placeholder="Text here"
+              placeholder="Enter your email"
               value={userData.email}
               onChange={handleChange}
             />
           </div>
 
+         
           <button
             type="submit"
             style={{
@@ -201,7 +202,6 @@ const Login = () => {
             Register
           </a>
         </form>
-
         <img
           src={mmil}
           alt="Overlay Image"
