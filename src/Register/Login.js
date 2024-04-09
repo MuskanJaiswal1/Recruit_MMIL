@@ -4,11 +4,10 @@ import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Register.css";
 
 const Login = () => {
   const [userData, setUserData] = useState({
-    name: "",
+    phoneNo: "",
     email: "",
   });
 
@@ -57,7 +56,8 @@ const Login = () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           background:
-            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)",
+            "linear-gradient(to right, #666666,#4d4d4d, #262626, #1a1a1a, #0d0d0d)", // Adjust as needed
+          // opacity: "0.6",
           padding: "10px",
           paddingTop: "20px",
           borderRadius: "10px",
@@ -93,7 +93,7 @@ const Login = () => {
               marginTop: "-10px",
             }}
           >
-            Name
+            PhoneNo
           </p>
 
           <div
@@ -118,9 +118,9 @@ const Login = () => {
                 outline: "none",
               }}
               type="text"
-              name="name"
+              name="phoneNo"
               placeholder="Text here"
-              value={userData.name}
+              value={userData.phoneNo}
               onChange={handleChange}
             />
           </div>
@@ -171,7 +171,18 @@ const Login = () => {
 
           <button
             type="submit"
-        class="loginPageBtn"
+            style={{
+              padding: "10px",
+              fontWeight: "bolder",
+              borderRadius: "14px",
+              cursor: "pointer",
+              backgroundColor: "#FFE454",
+              width: "15rem",
+              fontFamily: "Montserrat",
+              letterSpacing: "0",
+              fontSize: "22px",
+              marginTop: "3rem",
+            }}
           >
             Login
           </button>
