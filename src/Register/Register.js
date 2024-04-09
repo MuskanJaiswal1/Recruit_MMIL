@@ -55,12 +55,12 @@ const App = () => {
               objectFit: "cover",
             }}
           />
-          <a
+          <Link
             className="loginBtn"
-            href="/Login"
+            to="/Login"
           >
             Login
-          </a>
+          </Link>
           <div
             className="card"
             style={{

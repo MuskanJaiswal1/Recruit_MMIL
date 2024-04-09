@@ -58,10 +58,10 @@ const Design = () => {
       <div className='domains'>
         <div className='fields'>
           <ul>
-            <li className='design'><a href="/Design">Design</a></li>
-            <li><a href="/Programming">Programming</a></li>
-            <li><a href="/Webdev">Web-Dev</a></li>
-            <li className='and'><a href="/Android">Android</a></li>
+            <li className='design'><Link to="/Design">Design</Link></li>
+            <li><Link to="/Programming">Programming</Link></li>
+            <li><Link to="/Webdev">Web-Dev</Link></li>
+            <li className='and'><Link to="/Android">Android</Link></li>
           </ul>
           <Link to="/Register">
           <p class="fa-solid fa-arrow-left backBtn"></p>
@@ -78,7 +78,7 @@ const Design = () => {
             <h5>Instructions for Students</h5>
             <ul>
               <li>You are required to make a Unit Converter app. </li>
-              <li>Task details can be found <a href="">here</a>.</li>
+              <li>Task details can be found <Link to="">here</Link>.</li>
               <li>The task deadline is 1pm IST on 16-04-2023. </li>
               <li>Task should be submitted below.</li>
               <li>Apk should be uploaded on Google drive and attached below.</li>

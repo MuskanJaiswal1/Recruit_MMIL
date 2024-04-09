@@ -28,10 +28,10 @@ const Technical = () => {
       <div className='domains'>
         <div className='fields'>
           <ul>
-            <li className='design'><a href="/Design">Design</a></li>
-            <li><a href="/Programming">Programming</a></li>
-            <li><a href="/Webdev">Web Dev</a></li>
-            <li><a href="/Android">Android</a></li>
+            <li className='design'><Link to="/Design">Design</Link></li>
+            <li><Link to="/Programming">Programming</Link></li>
+            <li><Link to="/Webdev">Web Dev</Link></li>
+            <li><Link to="/Android">Android</Link></li>
           </ul>
         </div>
         <Link to="/Register">

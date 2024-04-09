@@ -262,7 +262,7 @@ const RegisteredPage = () => {
                   </li>
                   <li style={{ listStyle: "none" }}>
                     <button className="click">
-                      <a href="">Click here</a>
+                      <Link to="">Click here</Link>
                     </button>
                   </li>
                 </ul>
@@ -316,7 +316,7 @@ const RegisteredPage = () => {
                     <li>The link to the task has been provided below.</li>
                     <li style={{ listStyle: "none" }}>
                       <button className="click">
-                        <a href="/Technical">Click here</a>
+                        <Link to="/Technical">Click here</Link>
                       </button>
                     </li>
                   </ul>

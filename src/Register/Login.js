@@ -5,6 +5,7 @@ import appbg from "../assets/bg-app.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -175,8 +176,8 @@ const Login = () => {
           >
             Login
           </button>
-          <a
-            href="/Register"
+          <Link
+            to="/Register"
             style={{
               display: "block",
               textDecoration: "underline",
@@ -188,7 +189,7 @@ const Login = () => {
             }}
           >
             Register
-          </a>
+          </Link>
         </form>
 
         <img
