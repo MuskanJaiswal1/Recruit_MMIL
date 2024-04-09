@@ -9,7 +9,7 @@ const Design = require('../models/Design');
 const Android = require('../models/Android');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-// const authenticateToken = require('../middleware/verifyToken');
+
 const uuid = require('uuid');
 
 require('../db/connect');
@@ -108,15 +108,15 @@ routes.get('/user', async (req, res) => {
 });
 routes.post('/login', async (req, res) => {
     try {
-        const { name, email } = req.body;
+        const { phoneNo, email } = req.body;
         
         // Check if both name and email are provided
-        if (!name || !email) {
+        if (!phoneNo || !email) {
             return res.status(400).json({ error: "Name and email are required" });
         }
 
         // Check if the user with the provided name and email exists in the database
-        const user = await MMIL.findOne({ name, email });
+        const user = await MMIL.findOne({ phoneNo, email });
         if (!user) {
             return res.status(404).json({ error: "User not found" });
         }
@@ -129,6 +129,7 @@ routes.post('/login', async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
 
 routes.get('/user/:userId', async (req, res) => {
     try {
