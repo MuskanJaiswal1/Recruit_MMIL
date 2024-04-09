@@ -63,9 +63,9 @@ const Design = () => {
             <li><Link to="/Webdev">Web-Dev</Link></li>
             <li className='and'><Link to="/Android">Android</Link></li>
           </ul>
-          <Link to="/Register">
+          {/* <Link to="/Register">
           <p class="fa-solid fa-arrow-left backBtn"></p>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className='container'>
