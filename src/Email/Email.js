@@ -61,6 +61,9 @@ const Name = () => {
     if (formValid) {
       showTickmark(true);
     }
+    else{
+      showTickmark(false);
+    }
   }, [formValid]); 
 
   const updateWindowSize = () => {
