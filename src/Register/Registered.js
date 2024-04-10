@@ -7,6 +7,8 @@ import unstop from "../assets/unstop-logo 1.png";
 import mmil from "../assets/mmil.png";
 import appbg from "../assets/bg-app.svg";
 import "./Register.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RegisteredPage = () => {
   const { userId } = useParams(); 
@@ -28,6 +30,19 @@ const RegisteredPage = () => {
     setPositionTop(cardName === expandedCard ? "88%" : "105%");
     setDirection(cardName === expandedCard ? "right" : "down");
     setPositionMainTop(cardName === expandedCard ? "50%" : "60%");
+
+    if (cardName === "technical") {
+      toastify();
+    }
+  };
+  
+  const toastify = () => {
+    // Dismiss any existing toast
+    toast.dismiss();
+  
+    // Show new toast
+    toast.success("Task will be revealed after Aptitude Round.");
+  
   };
 
   const updateWindowSize = () => {
@@ -244,8 +259,10 @@ const RegisteredPage = () => {
                       ></img>{" "}
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click">
-                        <Link to="">Click here</Link>
+                      <button className="click" style={{cursor: "not-allowed"}}>
+                        {/* <a href=""> */}
+                          Click here
+                          {/* </a> */}
                       </button>
                     </li>
                   </ul>
@@ -258,7 +275,7 @@ const RegisteredPage = () => {
                 style={{ position: "absolute", right: "34px" }}
               ></i>
             </div>
-            <Link to="/Technical" className="card-link">
+            {/* <Link to="/Technical" className="card-link"> */}
               <div
                 className={`technical sub-card ${
                   expandedCard === "technical" ? "expanded-technical" : ""
@@ -299,7 +316,9 @@ const RegisteredPage = () => {
                       <li>The link to the task has been provided below.</li>
                       <li style={{ listStyle: "none" }}>
                         <button className="click">
-                          <Link to="/Technical">Click here</Link>
+                          {/* <Link to="/Technical"> */}
+                            Click here
+                            {/* </Link> */}
                         </button>
                       </li>
                     </ul>
@@ -312,7 +331,7 @@ const RegisteredPage = () => {
                   style={{ position: "absolute", right: "34px" }}
                 ></i>
               </div>
-            </Link>
+            {/* </Link> */}
             <div
               className={`interview sub-card ${
                 expandedCard === "interview" ? "expanded-interview" : ""

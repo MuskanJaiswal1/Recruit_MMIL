@@ -217,8 +217,8 @@ const App = () => {
                       Instruction for Students
                     </li>
                     <li>
-                      Your interview is scheduled for [Date Yet to <br />{" "}
-                      announce] at [Time Yet to announce]. Please <br /> ensure
+                      Your interview is scheduled for 15th of <br />{" "}
+                      April at [Time Yet to announce]. Please <br /> ensure
                       you are available at least <br /> 10 minutes before the
                       scheduled time.
                     </li>
