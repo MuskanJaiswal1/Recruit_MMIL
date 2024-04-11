@@ -157,6 +157,7 @@ const App = () => {
               <p  onClick={handleShowTickmark}>
                 <a
                   href="https://drive.google.com/drive/folders/1r6EDUf5fw4J5spxLAuyjITv69I0NZOIk?usp=sharing"
+                  target="_blank"
                   // onClick={() => inputRef.current.click()}
                   style={{
                     color: "#02CA46",

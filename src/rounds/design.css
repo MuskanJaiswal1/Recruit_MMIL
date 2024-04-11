@@ -333,12 +333,14 @@ form:valid .submit:hover {
     }
 
     .container {
+        margin-top: -68px;
         width: 82%;
         height: 705px;
     }
 
     .technical-container {
-        width: 305px;
+        margin-top: -68px;
+        width: 355px;
         height: 415px;
     }
 
@@ -348,6 +350,9 @@ form:valid .submit:hover {
         width: 271px;
         border-radius: 20px;
         padding: 6px;
+    }
+    .technical-instructions{
+        width: 322px;
     }
 
     .button {

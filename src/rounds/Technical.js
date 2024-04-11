@@ -41,7 +41,7 @@ const Technical = () => {
       <div className='technical-container'>
         <div className='rounds' >
           <p>Tasks</p>
-          <div className='instructions'>
+          <div className='instructions technical-instructions'>
             <p>Round 2</p>
             <h1 className='heading '> Technical Round</h1>
             <h6 className='task'>Task round to check your skills</h6>
