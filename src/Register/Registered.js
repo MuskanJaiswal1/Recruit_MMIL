@@ -251,18 +251,19 @@ const RegisteredPage = () => {
                     </li>
                     <li>The link to the task has been provided below.</li>
                     <li style={{ listStyle: "none" }}>
-                      {" "}
                       <img
                         src={unstop}
                         alt=""
                         style={{ margin: "10px", height: "30px" }}
-                      ></img>{" "}
+                      ></img>
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click" style={{cursor: "not-allowed"}}>
-                        {/* <a href=""> */}
+                      <button className="click" style={{cursor: "pointer"}}>
+                        <a 
+                        target="_blank"
+                        href="https://unstop.com/p/mmil-recruitments-aptitude-round-jss-academy-of-technical-education-jssate-noida-951880"> 
                           Click here
-                          {/* </a> */}
+                        </a> 
                       </button>
                     </li>
                   </ul>
