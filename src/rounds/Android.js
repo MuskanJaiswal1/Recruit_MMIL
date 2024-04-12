@@ -265,7 +265,7 @@ const Design = () => {
             <h5>Instructions for Students</h5>
             <ul>
               <li>You are required to make a Unit Converter app. </li>
-              <li>Task details can be found <Link to="">here</Link>.</li>
+              <li>Task details can be found <Link to="https://awake-marjoram-4b7.notion.site/Android-TASK-6838e82822cf482f958e4104e16f3110?pvs=4" target='_blank'>here</Link>.</li>
               <li>The task deadline is 3pm IST on 14-04-2024. </li>
               <li>Task should be submitted below.</li>
               <li>Apk should be uploaded on Google drive and attached below.</li>
