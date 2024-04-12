@@ -206,7 +206,7 @@ const RegisteredPage = () => {
             )}
           </div>
 
-          <Link to="/Login">
+          <Link to="/Register">
             <p
               class="fa-solid fa-arrow-right-from-bracket"
               title="Logout"

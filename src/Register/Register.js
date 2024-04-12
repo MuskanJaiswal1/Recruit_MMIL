@@ -6,6 +6,8 @@ import mmil from "../assets/mmil.png";
 import { Link } from "react-router-dom";
 import appbg from "../assets/bg-app.svg";
 import "./Register.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [windowSize, setWindowSize] = useState({
@@ -33,6 +35,10 @@ const App = () => {
       height: window.innerHeight,
     });
   };
+
+  const closeRegToast = () => {
+    toast.info("Registerations are closed now!");
+  }
 
   useEffect(() => {
     window.addEventListener("resize", updateWindowSize);
@@ -246,7 +252,7 @@ const App = () => {
             </div>
           </div>
           <img src={mmil} alt="Overlay Image" className="mmil-logo" />
-          <Link to="/First" className="link" style={{ top: positionTop }}>
+          <Link to="" onClick={closeRegToast} className="link" style={{ top: positionTop }}>
             Register Now
           </Link>
         </div>

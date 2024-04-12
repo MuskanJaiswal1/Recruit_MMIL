@@ -39,7 +39,7 @@ const App = () => {
       smokeElement.classList.add("moveUp");
 
       setTimeout(() => {
-        navigate("/Login");
+        navigate("/Register");
       }, 2000); 
     }
   }, [isClicked, navigate]);
