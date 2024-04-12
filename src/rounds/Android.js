@@ -4,6 +4,8 @@ import bg from "../assets/bg.jpg";
 import appbg from "../assets/bg-app.jpg";
 import './design.css';
 import { Link,useParams,useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
 const Design = () => {
@@ -23,6 +25,11 @@ const Design = () => {
   const handleUnClickProfile = () => {
     setShowNewElement(false);
   };
+
+  const handleToast = () => {
+    toast.success("Tasks submitted successfully");
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -43,6 +50,7 @@ const Design = () => {
         throw new Error('Failed to submit form');
       }
       console.log('Form submitted successfully');
+      handleToast();
       setPhoneNumber("");
       setGithubLink("");
       setGDriveLink("");

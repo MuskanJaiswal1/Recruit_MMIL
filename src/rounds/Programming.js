@@ -4,6 +4,8 @@ import appbg from "../assets/bg-app.jpg";
 import axios from 'axios';
 import './design.css';
 import { Link,useParams,useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import mmil from "../assets/1000058712_f1beee89cb94ffdbc7b3a05cbdf6e5cc-30_9_2023, 1_42_36 pm 2.png";
 
 
@@ -23,6 +25,11 @@ const Design = () => {
   const handleUnClickProfile = () => {
     setShowNewElement(false);
   };
+
+  const handleToast = () => {
+    toast.success("Form submitted successfully");
+  }
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -266,7 +273,7 @@ const Design = () => {
             <ul>
               <li>The contest will be held on Hackerrank.com .</li>
               <li>It will be of 2.5 hours and will contain 5 questions. </li>
-              <li>The contest timing will be from 4pm to 6:30pm <br /> IST on 15-04-24.</li>
+              <li>The contest timing will be from 7pm to 9pm <br /> IST on 13-04-24.</li>
               <li>Please sign up on Hackerank.com  <br />before attempting the quiz.</li>
             </ul>
             <h5>Details to be filled by Students.</h5>
