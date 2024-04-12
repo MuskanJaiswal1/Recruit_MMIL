@@ -25,6 +25,10 @@ const Login = () => {
 
   const history = useNavigate();
 
+  const closeRegToast = () => {
+    toast.info("Registerations are closed now!");
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -181,7 +185,8 @@ const Login = () => {
             Login
           </button>
           <a
-            href="/Register"
+            href="#"
+            onClick={closeRegToast}
             style={{
               display: "block",
               textDecoration: "underline",

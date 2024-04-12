@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import bg from "../assets/bg.jpg";
 import vector from "../assets/Vector (1).png";
@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const RegisteredPage = () => {
   const { userId } = useParams(); 
+  const navigate = useNavigate(); 
   const [userData, setUserData] = useState(null);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -31,9 +32,9 @@ const RegisteredPage = () => {
     setDirection(cardName === expandedCard ? "right" : "down");
     setPositionMainTop(cardName === expandedCard ? "50%" : "60%");
 
-    if (cardName === "technical") {
-      toastify();
-    }
+    // if (cardName === "technical") {
+    //   toastify();
+    // }
   };
   
   const toastify = () => {
@@ -81,6 +82,25 @@ const RegisteredPage = () => {
       fetchUserData();
     }
   }, [userId]);
+
+  const handleTechnicalClick = async () => {
+    // Navigate to the Technical page with userId
+   
+    try {
+      const response = await axios.post("https://recruit-mmil-4.onrender.com/login", userData);
+      if (response.status === 200) {
+        const userId = response.data.userId; // Assuming the userId is returned in the response
+        navigate(`/technical/${userId}`);
+      } else {
+        console.error("Login failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      toast.error("User not registered! Register using a unique email id.");
+      toast.error(error);
+    }
+   
+  };
 
   return (
     <>
@@ -145,7 +165,7 @@ const RegisteredPage = () => {
                     fontSize: "18px"
                   }}
                 >
-                  {userData ? userData.name.substring(0, 1) : ''}
+                  {userData ? userData.name.substring(0, 1).toUpperCase() : ''}
                 </button>
                 {userData && (
                   <>
@@ -186,7 +206,7 @@ const RegisteredPage = () => {
             )}
           </div>
 
-          <Link to="/Register">
+          <Link to="/Login">
             <p
               class="fa-solid fa-arrow-right-from-bracket"
               title="Logout"
@@ -251,19 +271,18 @@ const RegisteredPage = () => {
                     </li>
                     <li>The link to the task has been provided below.</li>
                     <li style={{ listStyle: "none" }}>
+                      {" "}
                       <img
                         src={unstop}
                         alt=""
                         style={{ margin: "10px", height: "30px" }}
-                      ></img>
+                      ></img>{" "}
                     </li>
                     <li style={{ listStyle: "none" }}>
-                      <button className="click" style={{cursor: "pointer"}}>
-                        <a 
-                        target="_blank"
-                        href="https://unstop.com/p/mmil-recruitments-aptitude-round-jss-academy-of-technical-education-jssate-noida-951880"> 
+                      <button className="click" style={{cursor: "not-allowed"}}>
+                        {/* <a href=""> */}
                           Click here
-                        </a> 
+                          {/* </a> */}
                       </button>
                     </li>
                   </ul>
@@ -276,7 +295,7 @@ const RegisteredPage = () => {
                 style={{ position: "absolute", right: "34px" }}
               ></i>
             </div>
-            {/* <Link to="/Technical" className="card-link"> */}
+            
               <div
                 className={`technical sub-card ${
                   expandedCard === "technical" ? "expanded-technical" : ""
@@ -316,7 +335,7 @@ const RegisteredPage = () => {
                       </li>
                       <li>The link to the task has been provided below.</li>
                       <li style={{ listStyle: "none" }}>
-                        <button className="click">
+                        <button className="click" onClick={handleTechnicalClick}>
                           {/* <Link to="/Technical"> */}
                             Click here
                             {/* </Link> */}
@@ -332,7 +351,7 @@ const RegisteredPage = () => {
                   style={{ position: "absolute", right: "34px" }}
                 ></i>
               </div>
-            {/* </Link> */}
+           
             <div
               className={`interview sub-card ${
                 expandedCard === "interview" ? "expanded-interview" : ""

@@ -65,11 +65,11 @@ const App = () => {
             <Route path="/Phone" element={<Phone />} />
             <Route path="/Domain" element={<Domain />} />
             <Route path="/Congrats" element={<Congrats />} />
-            <Route path="/Technical" element={<Technical />} />
-            <Route path="/Webdev" element={<Webdev />} />
-            <Route path="/Design" element={<Design />} />
-            <Route path="/Programming" element={<Programming />} />
-            <Route path="/Android" element={<Android />} />
+            <Route path="/Technical/:userId" element={<Technical />} />
+            <Route path="/Webdev/:userId" element={<Webdev />} />
+            <Route path="/Design/:userId" element={<Design />} />
+            <Route path="/Programming/:userId" element={<Programming />} />
+            <Route path="/Android/:userId" element={<Android />} />
             <Route path="/RocketLoader" element={<RocketLoader />} />
             <Route path="/Home" element={<Home/>}/>
             <Route path= "/Login" element = {<Login/>}/>
