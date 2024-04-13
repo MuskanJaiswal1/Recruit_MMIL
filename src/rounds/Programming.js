@@ -271,8 +271,8 @@ const Design = () => {
             <h6 className='task'>Task round to check your skills</h6>
             <h5>Instructions for Students</h5>
             <ul>
-              <li>The contest will be held on Hackerrank.com .</li>
-              <li>It will be of 2.5 hours and will contain 5 questions. </li>
+              <li>The contest will be held on Hackerrank.com. <a target="_blank" href="https://www.hackerrank.com/mmil-programming-club-technical-round">Click here</a> to go to the contest.</li>
+              <li>It will be of 2 hours and will contain 5 questions. </li>
               <li>The contest timing will be from 7pm to 9pm <br /> IST on 13-04-24.</li>
               <li>Please sign up on Hackerank.com  <br />before attempting the quiz.</li>
             </ul>
