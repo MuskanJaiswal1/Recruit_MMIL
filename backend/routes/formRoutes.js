@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const uuid = require('uuid');
+const WebDev = require('../models/WebDev');
 
 require('../db/connect');
 
@@ -85,11 +86,20 @@ routes.post('/name', async (req, res) => {
 routes.get('/user_list',async (req,res)=>{
     try {
         const user_list = await MMIL.find()
+        const android = await Android.find()
+        const WebDevv = await WebDev.find()
+        const Prog = await Programming.find()
+        const design = await Design.find()
         res.status(200).json(user_list)
+        res.status(200).json(android)
+        res.status(200).json(WebDevv)
+        res.status(200).json(Prog)
+        res.status(200).json(design)
     } catch (error) {
         console.log(error)
     }
 })
+
 routes.get('/user', async (req, res) => {
     try {
         // Retrieve user data from the database
