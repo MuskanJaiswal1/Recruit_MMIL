@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const uuid = require('uuid');
-const WebDev = require('../models/WebDev');
+
 
 require('../db/connect');
 
