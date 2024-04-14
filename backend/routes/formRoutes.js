@@ -92,23 +92,64 @@ routes.get('/user_list', async (req, res) => {
         const designUsers = await Design.find();
         const androidUsers = await Android.find();
 
-        // Combine data from all collections
-        const combinedData = {
-            mmilUsers,
-            webDevUsers,
-            programmingUsers,
-            designUsers,
-            androidUsers
-        };
+        // Merge data of users with the same phoneNo or email
+        const mergedUsers = mergeUsers(mmilUsers, webDevUsers, programmingUsers, designUsers, androidUsers);
 
-        // Send the combined data as the response
-        res.status(200).json(combinedData);
+        // Send the merged data as the response
+        res.status(200).json(mergedUsers);
 
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
+// Function to merge users with the same phoneNo or email
+function mergeUsers(mmilUsers, webDevUsers, programmingUsers, designUsers, androidUsers) {
+    const mergedUsers = {};
+
+    // Merge MMIL users
+    mmilUsers.forEach(user => {
+        if (!mergedUsers[user.phoneNo]) {
+            mergedUsers[user.phoneNo] = {};
+        }
+        mergedUsers[user.phoneNo] = { ...mergedUsers[user.phoneNo], ...user.toObject() };
+    });
+
+    // Merge WebDev users
+    webDevUsers.forEach(user => {
+        if (!mergedUsers[user.phoneNo]) {
+            mergedUsers[user.phoneNo] = {};
+        }
+        mergedUsers[user.phoneNo] = { ...mergedUsers[user.phoneNo], ...user.toObject() };
+    });
+
+    // Merge Programming users
+    programmingUsers.forEach(user => {
+        if (!mergedUsers[user.phoneNo]) {
+            mergedUsers[user.phoneNo] = {};
+        }
+        mergedUsers[user.phoneNo] = { ...mergedUsers[user.phoneNo], ...user.toObject() };
+    });
+
+    // Merge Design users
+    designUsers.forEach(user => {
+        if (!mergedUsers[user.phoneNo]) {
+            mergedUsers[user.phoneNo] = {};
+        }
+        mergedUsers[user.phoneNo] = { ...mergedUsers[user.phoneNo], ...user.toObject() };
+    });
+
+    // Merge Android users
+    androidUsers.forEach(user => {
+        if (!mergedUsers[user.phoneNo]) {
+            mergedUsers[user.phoneNo] = {};
+        }
+        mergedUsers[user.phoneNo] = { ...mergedUsers[user.phoneNo], ...user.toObject() };
+    });
+
+    return Object.values(mergedUsers);
+}
 
 
 routes.get('/user', async (req, res) => {
