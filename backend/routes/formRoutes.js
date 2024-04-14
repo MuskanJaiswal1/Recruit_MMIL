@@ -83,31 +83,33 @@ routes.post('/name', async (req, res) => {
         res.status(500).json({ error: "Failed to submit form" });
     }
 });
-routes.get('/user_list',async (req,res)=>{
+routes.get('/user_list', async (req, res) => {
     try {
-        const user_list = await MMIL.find()
-       
-        res.status(200).json(user_list)
-        
+        // Fetch data from each collection
+        const mmilUsers = await MMIL.find();
+        const webDevUsers = await WebDev.find();
+        const programmingUsers = await Programming.find();
+        const designUsers = await Design.find();
+        const androidUsers = await Android.find();
+
+        // Combine data from all collections
+        const combinedData = {
+            mmilUsers,
+            webDevUsers,
+            programmingUsers,
+            designUsers,
+            androidUsers
+        };
+
+        // Send the combined data as the response
+        res.status(200).json(combinedData);
+
     } catch (error) {
-        console.log(error)
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
-})
-routes.get('/Tasks',async(req,res)=>{
-    try{
-        const android = await Android.find()
-        const webDevv = await WebDev.find()
-        const Prog = await Programming.find()
-        const design = await Design.find()
-        res.status(200).json(android)
-        res.status(200).json(webDevv)
-        res.status(200).json(Prog)
-        res.status(200).json(design)
-    }
-    catch(error){
-        console.log(error)
-    }
-})
+});
+
 
 routes.get('/user', async (req, res) => {
     try {
